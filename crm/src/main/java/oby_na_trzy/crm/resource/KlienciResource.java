@@ -6,13 +6,17 @@ import org.hibernate.annotations.Subselect;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;
+import org.springframework.ui.Model;
+import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.ModelAndView;
 
 import javax.persistence.Column;
+import javax.validation.Valid;
 import java.util.List;
 
 import static org.codehaus.groovy.runtime.DefaultGroovyMethods.findAll;
+import static org.codehaus.groovy.runtime.DefaultGroovyMethods.toInteger;
 
 @RestController
 @RequestMapping(value = "/klienci")
@@ -21,7 +25,7 @@ public class KlienciResource {
     @Autowired
     KlienciRepository klienciRepository;
 
-//    @GetMapping(value = "/all")
+    //    @GetMapping(value = "/all")
     public List<Klienci> getAll() {
         return klienciRepository.findAll();
     }
@@ -31,7 +35,6 @@ public class KlienciResource {
         klienciRepository.save(klienci);
         return klienciRepository.findAll();
     }
-
 
 
     @GetMapping(value = "/")
@@ -48,6 +51,7 @@ public class KlienciResource {
 
     @GetMapping(value = "/searchbyid/{id}")
     public ModelAndView doSearchById(@PathVariable("id") int id){
+
 
         ModelAndView mv = new ModelAndView("tabela");
         mv.addObject("lists", klienciRepository.findOne(id));
@@ -70,6 +74,19 @@ public class KlienciResource {
         return mv;
     }
 
+//    @RequestMapping(value="/klienci/add", method = RequestMethod.POST)
+//
+//    public ModelAndView doAdd(@ModelAttribute(name="klient") Klienci klient, Model model)
+//    {
+//        String imie, nazwisko, pesel, adres_zam, adres_kon, email, telefon;
+//        Klienci nowyKlient = new Klienci();
+//
+//
+//        ModelAndView mv = new ModelAndView("redirect:/klienci/all");
+//
+//        klienciRepository.save(klient);
+//        return mv;
+//    }
 
 
 }
