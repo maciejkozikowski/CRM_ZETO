@@ -63,6 +63,13 @@ public class KlienciResource {
         return mv;
     }
 
+    @GetMapping(value = "/delete/{id}")
+    public ModelAndView doDelete(@PathVariable("id") int id){
+        ModelAndView mv = new ModelAndView("redirect:/klienci/all");
+        klienciRepository.delete(id);
+        return mv;
+    }
+
 
 
 }
