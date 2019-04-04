@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html xmlns:c="" xmlns:th="http://www.w3.org/1999/xhtml">
+<html xmlns:th="http://www.w3.org/1999/xhtml">
 <head lang="en" xmlns:th="http://www.thymeleaf.org">
     <meta charset="UTF-8"/>
     <title>Klienci</title>
@@ -30,9 +30,6 @@
     <th>
         e-mail
     </th>
-    <tr th:if="${lists.empty}">
-        <td>Brak klientów</td>
-    </tr>
     <tr th:each="klient : ${lists}">
         <td><span th:text="${klient.id}"/></td>
         <td><span th:text="${klient.imie}"/></td>

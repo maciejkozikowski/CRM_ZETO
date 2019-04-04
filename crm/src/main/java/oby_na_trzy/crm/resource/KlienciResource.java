@@ -26,12 +26,25 @@ public class KlienciResource {
         return klienciRepository.findAll();
     }
 
-    @GetMapping(value = "/all")
+
+
+    @GetMapping(value = "/")
     public ModelAndView doHome(){
+        return new ModelAndView("index");
+    }
+    @GetMapping(value = "/all")
+    public ModelAndView doView(){
 
         ModelAndView mv = new ModelAndView("tabela");
         mv.addObject("lists", getAll());
         return mv;
     }
 
+    @GetMapping(value = "/search/{id}")
+    public ModelAndView doSearch(@PathVariable("id") int id){
+
+        ModelAndView mv = new ModelAndView("tabela");
+        mv.addObject("lists", klienciRepository.findOne(id));
+        return mv;
+    }
 }
