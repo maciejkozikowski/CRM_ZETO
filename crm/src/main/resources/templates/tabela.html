@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html xmlns:c="" xmlns:th="http://www.w3.org/1999/xhtml">
+<head lang="en" xmlns:th="http://www.thymeleaf.org">
+    <meta charset="UTF-8"/>
+    <title>Klienci</title>
+</head>
+<body>
+<table border="1">
+    <th>
+        Id
+    </th>
+    <th>
+        Imię
+    </th>
+    <th>
+        Nazwisko
+    </th>
+    <th>
+        PESEL
+    </th>
+    <th>
+        Adres zameldowania
+    </th>
+    <th>
+        Adres korespondencyjny
+    </th>
+    <th>
+        Telefon kontaktowy
+    </th>
+    <th>
+        e-mail
+    </th>
+    <tr th:if="${lists.empty}">
+        <td>Brak klientów</td>
+    </tr>
+    <tr th:each="klient : ${lists}">
+        <td><span th:text="${klient.id}"/></td>
+        <td><span th:text="${klient.imie}"/></td>
+        <td><span th:text="${klient.nazwisko}"/></td>
+        <td><span th:text="${klient.pesel}"/></td>
+        <td><span th:text="${klient.adres_zam}"/></td>
+        <td><span th:text="${klient.adres_kon}"/></td>
+        <td><span th:text="${klient.telefon}"/></td>
+        <td><span th:text="${klient.email}"/></td>
+    </tr>
+</table>
+</body>
+</html>
