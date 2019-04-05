@@ -1,5 +1,6 @@
 package oby_na_trzy.crm.resource;
 
+import oby_na_trzy.crm.model.FormKlienci;
 import oby_na_trzy.crm.model.Klienci;
 import oby_na_trzy.crm.repository.KlienciRepository;
 import org.hibernate.annotations.Subselect;
@@ -7,6 +8,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;
 import org.springframework.ui.Model;
+import org.springframework.ui.ModelMap;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.ModelAndView;
@@ -74,19 +76,33 @@ public class KlienciResource {
         return mv;
     }
 
-//    @RequestMapping(value="/klienci/add", method = RequestMethod.POST)
-//
-//    public ModelAndView doAdd(@ModelAttribute(name="klient") Klienci klient, Model model)
-//    {
-//        String imie, nazwisko, pesel, adres_zam, adres_kon, email, telefon;
-//        Klienci nowyKlient = new Klienci();
-//
-//
-//        ModelAndView mv = new ModelAndView("redirect:/klienci/all");
-//
-//        klienciRepository.save(klient);
-//        return mv;
-//    }
+
+
+    @RequestMapping(value = "/add", method = RequestMethod.POST)
+
+    public ModelAndView doAdd(@ModelAttribute(name="formKlienci") FormKlienci klient, Model model)
+    {
+        ModelAndView mv = new ModelAndView("redirect:/klienci/all");
+        if (klient != null)
+        {
+            model.addAttribute("formKlienci", klient);
+        }
+        else
+        {
+            model.addAttribute("formKlienci", new FormKlienci());
+        }
+
+        Klienci nowyKlient = new Klienci();
+        nowyKlient.setImie(klient.getImie());
+        nowyKlient.setNazwisko(klient.getNazwisko());
+        nowyKlient.setPesel(klient.getPesel());
+        nowyKlient.setAdres_zam(klient.getAdres_zam());
+        nowyKlient.setAdres_kon(klient.getAdres_kon());
+        nowyKlient.setTelefon(klient.getTelefon());
+        nowyKlient.setEmail(klient.getEmail());
+        klienciRepository.save(nowyKlient);
+        return mv;
+    }
 
 
 }

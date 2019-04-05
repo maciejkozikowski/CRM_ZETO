@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8"/>
+    <title>Title</title>
+</head>
+<body>
+<form action="#" th:action="@{/klienci/add}" th:object="${formKlienci}" method="post">
+
+    Imie
+    <input type="text" id="imie" th:value="${formKlienci?.imie}" /><br/>
+    Nazwisko
+    <input type="text" id="nazwisko" th:value="${formKlienci?.nazwisko}"/><br/>
+    PESEL
+    <input type="text" id="pesel" th:value="${formKlienci?.pesel}"/><br/>
+    Adres Zam
+    <input type="text" id="adres_zam" th:value="${formKlienci?.adres_zam}"/><br/>
+    Adres Kon
+    <input type="text" id="adres_kon" th:value="${formKlienci?.adres_kon}"/><br/>
+    telefon
+    <input type="text" id="telefon" th:value="${formKlienci?.telefon}"/><br/>
+    E-mail
+    <input type="email" id="email" th:value="${formKlienci?.email}"/><br/>
+    <input type="submit" value="Dodaj"/>
+
+
+</form>
+
+</body>
+</html>

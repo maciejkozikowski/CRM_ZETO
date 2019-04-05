@@ -1,49 +1,14 @@
 package oby_na_trzy.crm.model;
 
-import javax.persistence.*;
 
-@Entity
-@Table(name = "klienci")
-public class Klienci {
-    @Id
-    @GeneratedValue
-    @Column(name = "id")
-    private Integer id;
-
-    @Column(name = "imie")
+public class FormKlienci {
     private String imie;
-
-    @Column(name = "nazwisko")
     private String nazwisko;
-
-    @Column(name = "pesel")
     private String pesel;
-
-    @Column(name = "adres_zam")
     private String adres_zam;
-
-    @Column(name = "adres_kon")
     private String adres_kon;
-
-    @Column(name = "telefon")
     private String telefon;
-
-    @Column(name = "email")
     private String email;
-
-    public Klienci() {
-    }
-
-    public Integer getId() {
-        return id;
-    }
-
-    public void setId(Integer id) {
-        this.id = id;
-    }
-    public void setId(String id) {
-        this.id = Integer.parseInt(id);
-    }
 
     public String getImie() {
         return imie;
@@ -99,5 +64,8 @@ public class Klienci {
 
     public void setEmail(String email) {
         this.email = email;
+    }
+
+    public FormKlienci(){
     }
 }
