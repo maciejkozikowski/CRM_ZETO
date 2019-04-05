@@ -1,14 +1,19 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
+<!--wpis obowiązkowy do komunikacji ze Spring Boot-->
 <head>
     <meta charset="UTF-8"/>
     <title>Title</title>
 </head>
 <body>
 <form action="#" th:action="@{/klienci/add}" th:object="${formKlienci}" th:method="post">
-
+    <!--th:action - tutaj wpisujemy do jakiej strony mamy przejść po kliknięci submit-->
+    <!--th:object - nazwa obiektu - musi być taka sama jak w KlienciResource!-->
+    <!--th:method - metoda przesyłania formularza-->
+    <!--zwracam uwagę na znaczki!-->
     Imie
     <input type="text" id="imie" th:field="*{imie}" /><br/>
+    <!--przykład wpisania pola-->
     Nazwisko
     <input type="text" id="nazwisko" th:field="*{nazwisko}"/><br/>
     PESEL

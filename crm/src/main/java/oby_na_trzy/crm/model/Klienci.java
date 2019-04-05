@@ -2,18 +2,21 @@ package oby_na_trzy.crm.model;
 
 import javax.persistence.*;
 
-@Entity
-@Table(name = "klienci")
+// klasa naszej tabeli klienci
+// analogicznie jak w FormKlienci tworzymy pola, gettery, settery i konstruktor
+
+@Entity // informacja o tym, że to klasa odpowiadająca tabeli w bazie danych
+@Table(name = "klienci") // ustawiamy nazwę tabeli
 public class Klienci {
-    @Id
-    @GeneratedValue
-    @Column(name = "id")
+    @Id // pole id jest identyfikatorem w tabeli
+    @GeneratedValue // wartości ustawiane są automatycznie
+    @Column(name = "id") //pole odpowiada kolumnie id w tabeli
     private Integer id;
 
-    @Column(name = "imie")
+    @Column(name = "imie")//pole odpowiada kolumnie imie w tabeli
     private String imie;
 
-    @Column(name = "nazwisko")
+    @Column(name = "nazwisko") //analogicznie
     private String nazwisko;
 
     @Column(name = "pesel")

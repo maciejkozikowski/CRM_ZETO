@@ -31,6 +31,7 @@
         e-mail
     </th>
     <tr th:each="klient : ${lists}">
+        <!--wykonuje się pętla dla listy lists (nazwa taka jak w KlienciResource)-->
         <td><span th:text="${klient.id}"/></td>
         <td><span th:text="${klient.imie}"/></td>
         <td><span th:text="${klient.nazwisko}"/></td>

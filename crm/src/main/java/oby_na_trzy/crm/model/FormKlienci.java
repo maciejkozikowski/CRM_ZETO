@@ -1,6 +1,8 @@
 package oby_na_trzy.crm.model;
 
+// zwykła klasa dla formularza dodawania/modyfikowania klienta
 public class FormKlienci {
+    //pola naszego formularza
     private String imie;
     private String nazwisko;
     private String pesel;
@@ -8,6 +10,12 @@ public class FormKlienci {
     private String adres_kon;
     private String telefon;
     private String email;
+
+    //tworzymy gettery, settery i konstruktor
+    //w IntelliJ możemy zrobić to automatycznie
+    //Klikamy "prawy z myszy" i wybieramy Generate
+    //Contructor -> select none - utworzy sie pusty konstruktor (jeśli jest potrzeba ustawiania pól można je wybrać)
+    //Getter and Setter -> wybieramy wszystko
 
     public String getImie() {
         return imie;
@@ -67,8 +75,11 @@ public class FormKlienci {
 
     public FormKlienci(){ }
 
+    //ta metoda służy zamianie obiektu formularza na obiekt encji(rekordu) do tabeli
     public Klienci formToKlient(){
+        //tworzymy nowy obiekt encji
         Klienci klient = new Klienci();
+        //ustawiamy wszystkie pola (oprócz id - o tym w klasie Klienci)
         klient.setImie(getImie());
         klient.setNazwisko(getNazwisko());
         klient.setPesel(getPesel());
@@ -76,6 +87,6 @@ public class FormKlienci {
         klient.setAdres_kon(getAdres_kon());
         klient.setTelefon(getTelefon());
         klient.setEmail(getEmail());
-        return klient;
+        return klient; //zwracamy naszą encję
     }
 }
