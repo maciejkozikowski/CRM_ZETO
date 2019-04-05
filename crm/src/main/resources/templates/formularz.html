@@ -5,22 +5,22 @@
     <title>Title</title>
 </head>
 <body>
-<form action="#" th:action="@{/klienci/add}" th:object="${formKlienci}" method="post">
+<form action="#" th:action="@{/klienci/add}" th:object="${formKlienci}" th:method="post">
 
     Imie
-    <input type="text" id="imie" th:value="${formKlienci?.imie}" /><br/>
+    <input type="text" id="imie" th:field="*{imie}" /><br/>
     Nazwisko
-    <input type="text" id="nazwisko" th:value="${formKlienci?.nazwisko}"/><br/>
+    <input type="text" id="nazwisko" th:field="*{nazwisko}"/><br/>
     PESEL
-    <input type="text" id="pesel" th:value="${formKlienci?.pesel}"/><br/>
+    <input type="text" id="pesel" th:field="*{pesel}"/><br/>
     Adres Zam
-    <input type="text" id="adres_zam" th:value="${formKlienci?.adres_zam}"/><br/>
+    <input type="text" id="adres_zam" th:field="*{adres_zam}"/><br/>
     Adres Kon
-    <input type="text" id="adres_kon" th:value="${formKlienci?.adres_kon}"/><br/>
+    <input type="text" id="adres_kon" th:field="*{adres_kon}"/><br/>
     telefon
-    <input type="text" id="telefon" th:value="${formKlienci?.telefon}"/><br/>
+    <input type="text" id="telefon" th:field="*{telefon}"/><br/>
     E-mail
-    <input type="email" id="email" th:value="${formKlienci?.email}"/><br/>
+    <input type="email" id="email" th:field="*{email}"/><br/>
     <input type="submit" value="Dodaj"/>
 
 

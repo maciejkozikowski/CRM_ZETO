@@ -1,6 +1,5 @@
 package oby_na_trzy.crm.model;
 
-
 public class FormKlienci {
     private String imie;
     private String nazwisko;
@@ -66,6 +65,17 @@ public class FormKlienci {
         this.email = email;
     }
 
-    public FormKlienci(){
+    public FormKlienci(){ }
+
+    public Klienci formToKlient(){
+        Klienci klient = new Klienci();
+        klient.setImie(getImie());
+        klient.setNazwisko(getNazwisko());
+        klient.setPesel(getPesel());
+        klient.setAdres_zam(getAdres_zam());
+        klient.setAdres_kon(getAdres_kon());
+        klient.setTelefon(getTelefon());
+        klient.setEmail(getEmail());
+        return klient;
     }
 }

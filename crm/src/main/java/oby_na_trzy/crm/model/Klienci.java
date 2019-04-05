@@ -31,8 +31,7 @@ public class Klienci {
     @Column(name = "email")
     private String email;
 
-    public Klienci() {
-    }
+    public Klienci() { }
 
     public Integer getId() {
         return id;
@@ -41,6 +40,7 @@ public class Klienci {
     public void setId(Integer id) {
         this.id = id;
     }
+
     public void setId(String id) {
         this.id = Integer.parseInt(id);
     }

@@ -1,9 +1,10 @@
 package oby_na_trzy.crm.controller;
 
+import oby_na_trzy.crm.model.FormKlienci;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
 
 @Controller
 public class MainController {
@@ -13,8 +14,8 @@ public class MainController {
     }
 
     @RequestMapping("/klienci/add")
-    String getFormKlienci(ModelMap modelMap){
+    String getFormKlienci(Model model){
+        model.addAttribute("formKlienci", new FormKlienci());
         return "formularz";
     }
-
 }
