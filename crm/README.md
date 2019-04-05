@@ -5,6 +5,10 @@ jdk1.8.0_201
 
 Wersja Spring Boot 1.5.20
 
+Pamiętamy o bazie danych (na razie Xampp, nazwa bazy crm)
+
+tabela znajduje się w pliku klienci.sql
+
 Pliki, które nas najbardziej interesują znajdują się w folderze src/main
 
 FRONT-END
