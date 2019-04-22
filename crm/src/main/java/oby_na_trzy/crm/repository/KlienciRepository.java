@@ -13,7 +13,7 @@ public interface KlienciRepository extends JpaRepository<Klienci, Integer> { // 
     //tutaj możemy ustawić własne zapytanie
     //zmienne wpisujemy po znaku :
     //potem dodajemy je jako parametry @Param
-    @Query(value = "SELECT * FROM klienci WHERE pesel = :peselValue", nativeQuery = true)
+    @Query(value = "SELECT * FROM klienci WHERE pesel LIKE :peselValue", nativeQuery = true)
     List<Klienci> findAllByPesel(@Param("peselValue") String pesel); //to jest nasza metoda szukająca po peselu
     // brak ciała może trochę dziwić, ale pamiętajmy, że wykonało się zapytanie SQL
 }

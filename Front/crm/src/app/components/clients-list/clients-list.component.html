@@ -1,4 +1,13 @@
-<table border="1">
+<form (submit)="searchClient(pesel)">
+    <label>Podaj PESEL</label>
+    <input type="text" name="pesel" required [(ngModel)]="pesel" />
+    <button>Szukaj</button>
+  </form>
+  <br/>
+<button (click)="getAllClients()">Pokaż wszystko</button>
+<button routerLink="form">Dodaj</button>
+  <br/><br/>
+  <table border="1">
   <th>
       Id
   </th>

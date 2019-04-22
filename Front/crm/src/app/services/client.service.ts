@@ -15,6 +15,7 @@ export class ClientService {
   private postClientURL = this.server + 'klienci/add';
   private getClientURL = this.server + 'klienci/searchbyid/{id}';
   private deleteClientURL = this.server + 'klienci/delete/{id}';
+  private searchClientURL = this.server + 'klienci/searchbypesel/{pesel}';
 
   constructor(private http: HttpClient) {}
 
@@ -34,6 +35,11 @@ export class ClientService {
   deleteClient(id: number) {
     const url = this.deleteClientURL.replace('{id}', id.toString());
     return this.http.delete(url);
+  }
+
+  searchClient(pesel: String){
+    const url = this.searchClientURL.replace('{pesel}', pesel.toString());
+    return this.http.get(url);
   }
 
 }

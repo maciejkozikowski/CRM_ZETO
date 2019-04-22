@@ -16,6 +16,7 @@ export class ClientsListComponent implements OnInit, OnDestroy {
   title = 'crm';
   clients: Klient[] = [];
   client: Klient;
+  pesel: string;
 
   subscriptions: Subscription[] = [];
 
@@ -23,8 +24,7 @@ export class ClientsListComponent implements OnInit, OnDestroy {
               private router: Router) {}
 
   ngOnInit() {
-    this.getAllClients(); 
-  }
+    this.getAllClients(); }
 
   getAllClients() {
     this.subscriptions.push(this.clientService.getAllClients().subscribe(
@@ -37,11 +37,9 @@ export class ClientsListComponent implements OnInit, OnDestroy {
     ));
   }
 
-  addClient(){
-    
-  }
+  addClient() { }
 
-  deleteClient(id: number){
+  deleteClient(id: number) {
     if (confirm(`Czy chcesz usunąć klienta o id=${id}?`)) {
       this.subscriptions.push(
         this.clientService.deleteClient(id).subscribe(
@@ -55,6 +53,17 @@ export class ClientsListComponent implements OnInit, OnDestroy {
         )
       );
     }
+  }
+
+  searchClient(pesel: string) {
+    this.subscriptions.push(this.clientService.searchClient(pesel).subscribe(
+      (data: Klient[]) => {
+        this.clients = data;
+      },
+      error => {
+        console.error(error);
+      }
+    ));
   }
 
   ngOnDestroy() {

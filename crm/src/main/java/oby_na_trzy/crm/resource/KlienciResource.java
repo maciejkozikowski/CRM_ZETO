@@ -28,7 +28,8 @@ public class KlienciResource{
 
     @GetMapping(value = "/searchbypesel/{pesel}") //jw
     public List<Klienci> doSearchByPesel(@PathVariable("pesel") String pesel){
-        return klienciRepository.findAllByPesel(pesel); // tą metodę dodaliśmy w KlienciRepository
+        String _pesel = "%" + pesel + "%";
+        return klienciRepository.findAllByPesel(_pesel); // tą metodę dodaliśmy w KlienciRepository
     }
 
     @DeleteMapping(value = "/delete/{id}")
