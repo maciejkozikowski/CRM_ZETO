@@ -8,7 +8,7 @@ import java.util.List;
 
 // tu jest interfejs do repozytorium naszej tabeli/klasy
 public interface KlienciRepository extends JpaRepository<Klienci, Integer> { // formalność musi być dopełniona
-                                  // ten fragment po prostu musi być, tu są podstawowe medody do obługi bazy
+                                  // ten fragment po prostu musi być, tu są podstawowe metody do obługi bazy
 
     //tutaj możemy ustawić własne zapytanie
     //zmienne wpisujemy po znaku :
