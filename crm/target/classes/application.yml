@@ -1,9 +1,9 @@
 spring:
   datasource:
     driverClassName: com.mysql.jdbc.Driver
-    url: jdbc:mysql://localhost:3306/crm
-    username: root
-    password:
+    url: jdbc:mysql://den1.mysql6.gear.host:3306/zetocrm
+    username: zetocrm
+    password: Jx85Z_Wz_yBB
   jpa:
     hibernate.ddl-auto: update
     generate-ddl: true
