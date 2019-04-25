@@ -6,7 +6,7 @@ export class Telefony {
     public darmowy_rozmowy: boolean;
     public darmowe_smsy: boolean;
     public darmowy_internet: boolean;
-    public idklienta: number;
+    public id_klienta: number;
     
 }
 
