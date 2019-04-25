@@ -5,11 +5,11 @@ import oby_na_trzy.crm.repository.TelefonyRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 import java.util.List;
+import java.util.Optional;
 
 @RestController
 @RequestMapping(value = "/telefon")
 @CrossOrigin(origins = "http://localhost:4200")
-
 public class TelefonyResource {
 
     @Autowired
@@ -18,14 +18,19 @@ public class TelefonyResource {
     @GetMapping(value ="/all")
     public List<Telefony> getAll() {return telefonyRepository.findAll();}
 
+    @GetMapping(value = "searchbyid/{id}")
+    public Optional<Telefony> doSearchById (@PathVariable("id") int id){
+        return telefonyRepository.findById(id);
+    }
+
     @GetMapping(value = "/searchbynumer/{numer}")
-    public Telefony doSearchByNumer(@PathVariable("numer") String numer) {return telefonyRepository.findOne(numer);}
+    public List<Telefony> doSearchByNumer(@PathVariable("numer") String numer) {return telefonyRepository.findAllByNumer(numer);}
 
     @GetMapping(value = "/searchbyidklienta/{idklienta}")
     public List<Telefony> doSearchByIdKlienta(@PathVariable("IdKlienta") int IdKlienta) {return telefonyRepository.findAllByIdKlienta(IdKlienta);}
 
-    @DeleteMapping(value = "/delete/{numer}")
-    public void doDelete(@PathVariable("numer") String numer){telefonyRepository.delete(numer);}
+    @DeleteMapping(value = "/delete/{id}")
+    public void doDelete(@PathVariable("id") int id){telefonyRepository.deleteById(id);}
 
     @PostMapping(value = "/add")
     public void doAdd(@RequestBody Telefony telefon){telefonyRepository.save(telefon);}

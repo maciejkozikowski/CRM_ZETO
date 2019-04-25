@@ -11,7 +11,7 @@ public interface TelefonyRepository extends JpaRepository<Telefony, Integer>{
     @Query(value = "SELECT * FROM telefony where IdKlienta like :IdKlientaValue", nativeQuery = true)
     List<Telefony> findAllByIdKlienta(@Param("IdKlientaValue") int IdKlienta);
 
-    Telefony findOne(String numer);
+    @Query(value = "SELECT * FROM telefony where numer like :NumerTel", nativeQuery = true)
+    List<Telefony> findAllByNumer(@Param("NumerTel") String numer);
 
-    void delete(String numer);
 }

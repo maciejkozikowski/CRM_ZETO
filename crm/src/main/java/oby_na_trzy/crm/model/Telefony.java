@@ -4,7 +4,13 @@ import javax.persistence.*;
 @Entity
 @Table(name = "telefony")
 public class Telefony {
-    @Id //pole numer jest identyfikatorem w tabeli
+
+    @Id
+    @GeneratedValue
+    @Column(name = "id")
+    private int id;
+
+    //@Id //pole numer jest identyfikatorem w tabeli
     @Column(name = "numer") //pole odpowiada kolumnie numer w tabeli
     private String numer;
 
@@ -27,6 +33,10 @@ public class Telefony {
     private int IdKlienta;
 
     public Telefony() {}
+
+    public int getId() { return id; }
+
+    public void setId(int id) { this.id = id; }
 
     public String getNumer() {return numer;}
 
