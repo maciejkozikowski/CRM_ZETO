@@ -5,7 +5,7 @@
 	<parent>
 		<groupId>org.springframework.boot</groupId>
 		<artifactId>spring-boot-starter-parent</artifactId>
-		<version>1.5.20.RELEASE</version>
+		<version>2.0.5.RELEASE</version>
 		<relativePath/> <!-- lookup parent from oby_na_trzy.crm.repository -->
 	</parent>
 	<groupId>oby_na_trzy</groupId>
@@ -61,6 +61,8 @@
 		<dependency>
 			<groupId>org.springframework</groupId>
 			<artifactId>gs-rest-service-cors</artifactId>
+
+			<version>0.1.0</version>
 		</dependency>
 
 		<!--<dependency>-->
@@ -76,7 +78,11 @@
 			<artifactId>spring-boot-starter-thymeleaf</artifactId>
 		</dependency>
 
-
+		<!--<dependency>-->
+			<!--<groupId>com.amazonaws</groupId>-->
+			<!--<artifactId>aws-java-sdk</artifactId>-->
+			<!--<version>1.11.106</version>-->
+		<!--</dependency>-->
 
 	</dependencies>
 
