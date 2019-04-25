@@ -8,7 +8,7 @@ import java.util.List;
 
 public interface TelefonyRepository extends JpaRepository<Telefony, Integer>{
 
-    @Query(value = "SELECT * FROM telefony where IdKlienta like :IdKlientaValue", nativeQuery = true)
+    @Query(value = "SELECT * FROM telefony where id_klienta like :IdKlientaValue", nativeQuery = true)
     List<Telefony> findAllByIdKlienta(@Param("IdKlientaValue") int IdKlienta);
 
     @Query(value = "SELECT * FROM telefony where numer like :NumerTel", nativeQuery = true)

@@ -56,7 +56,7 @@ export class PhonesComponent implements OnInit, OnDestroy {
   }
 
   searchPhones(idklienta: number) {
-    this.subscriptions.push(this.phonesService.searchByClientId(+idklienta).subscribe(
+    this.subscriptions.push(this.phonesService.searchByClientId(idklienta).subscribe(
       (data: Telefony[]) => {
         this.phones = data;
       },

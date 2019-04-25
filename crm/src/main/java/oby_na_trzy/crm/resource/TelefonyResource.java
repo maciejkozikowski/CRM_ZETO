@@ -27,7 +27,7 @@ public class TelefonyResource {
     public List<Telefony> doSearchByNumer(@PathVariable("numer") String numer) {return telefonyRepository.findAllByNumer(numer);}
 
     @GetMapping(value = "/searchbyidklienta/{idklienta}")
-    public List<Telefony> doSearchByIdKlienta(@PathVariable("IdKlienta") int IdKlienta) {return telefonyRepository.findAllByIdKlienta(IdKlienta);}
+    public List<Telefony> doSearchByIdKlienta(@PathVariable("idklienta") int IdKlienta) {return telefonyRepository.findAllByIdKlienta(IdKlienta);}
 
     @DeleteMapping(value = "/delete/{id}")
     public void doDelete(@PathVariable("id") int id){telefonyRepository.deleteById(id);}
