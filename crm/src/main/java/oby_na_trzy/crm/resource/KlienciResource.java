@@ -5,6 +5,7 @@ import oby_na_trzy.crm.repository.KlienciRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 import java.util.List;
+import java.util.Optional;
 
 // w tej klasie obługujemy CRUD-a
 @RestController //nie wiem po co, ale działa
@@ -22,8 +23,8 @@ public class KlienciResource{
     }
 
     @GetMapping(value = "/searchbyid/{id}") //adres "/klienci/searchbyid/" i tu po ukośniku wartość id
-    public Klienci doSearchById(@PathVariable("id") int id){
-        return klienciRepository.findOne(id);
+    public Optional<Klienci> doSearchById(@PathVariable("id") int id){
+        return klienciRepository.findById(id);
     }
 
     @GetMapping(value = "/searchbypesel/{pesel}") //jw
@@ -34,7 +35,7 @@ public class KlienciResource{
 
     @DeleteMapping(value = "/delete/{id}")
     public void doDelete(@PathVariable("id") int id){
-        klienciRepository.delete(id);
+        klienciRepository.deleteById(id);
     }
 
     @PostMapping(value = "/add")
