@@ -9,20 +9,13 @@ import { ClientsListComponent } from './components/clients-list/clients-list.com
 import { ClientFormComponent } from './components/clients-list/client-form/client-form.component';
 import { ClientShowComponent } from './components/clients-list/client-show/client-show.component';
 import { ClientService } from './services/client.service';
-import { PhonesService } from './services/phones.service';
-import { PhonesComponent } from './components/phones/phones.component';
-import { PhonesShowComponent } from './components/phones/phones-show/phones-show.component';
-import { PhonesFormComponent } from './components/phones/phones-form/phones-form.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     ClientsListComponent,
     ClientFormComponent,
-    ClientShowComponent,
-    PhonesComponent,
-    PhonesShowComponent,
-    PhonesFormComponent
+    ClientShowComponent
   ],
   imports: [
     BrowserModule,
@@ -30,10 +23,7 @@ import { PhonesFormComponent } from './components/phones/phones-form/phones-form
     HttpClientModule,
     FormsModule
   ],
-  providers: [
-    ClientService, 
-    PhonesService
-  ],
+  providers: [ClientService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
