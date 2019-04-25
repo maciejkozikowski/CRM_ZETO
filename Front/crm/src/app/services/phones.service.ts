@@ -13,7 +13,7 @@ export class PhonesService {
   private server = globalConfig.serverURL;
   private allPhoneURL = this.server + 'telefon/all';
   private postPhoneURL = this.server + 'telefon/add';
-  private getPhoneURL = this.server + 'telefon/searchbynumer/{numer}';
+  private getIdURL = this.server + 'telefon/searchbyid/{id}';
   private deletePhoneURL = this.server + 'telefon/delete/{id}';
   private searchByClientIdURL = this.server + 'telefon/searchbyidklienta/{idklienta}';
 
@@ -28,8 +28,8 @@ export class PhonesService {
     return this.http.post(this.postPhoneURL, phone);
   }
 
-  getPhone(numer: string) {
-    const url = this.getPhoneURL.replace('{numer}', numer.toString());
+  getPhone(id: number) {
+    const url = this.getIdURL.replace('{id}', id.toString());
     return this.http.get(url);
   }
 

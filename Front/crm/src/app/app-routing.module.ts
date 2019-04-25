@@ -17,7 +17,7 @@ const routes: Routes = [
   { path: 'clients/show/:pesel', component: ClientFormComponent },
   { path: 'phones', component: PhonesComponent },
   { path: 'phones/form', component: PhonesFormComponent },
-  { path: 'phones/form/:numer', component: PhonesFormComponent },
+  { path: 'phones/form/:id', component: PhonesFormComponent },
   { path: 'clients/show/:idklienta', component: PhonesFormComponent },
   
 ];

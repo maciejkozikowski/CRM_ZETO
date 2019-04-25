@@ -22,15 +22,15 @@ export class PhonesFormComponent implements OnInit, OnDestroy {
   ngOnInit() {
     this.route.paramMap.subscribe(data => {
       console.log(data)
-      if (data.has('numer')) {
-        this.phone.numer = data.get('numer');
+      if (data.has('id')) {
+        this.phone.id = parseInt(data.get('id'), 10);
         this.getPhones();
       }
     })
   }
 
   getPhones() {
-    this.subscriptions.push(this.phonesService.getPhone(this.phone.numer).subscribe(
+    this.subscriptions.push(this.phonesService.getPhone(this.phone.id).subscribe(
       (data: Telefony) => {
         this.phone = data;
       },
