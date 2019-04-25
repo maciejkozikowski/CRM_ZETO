@@ -1,0 +1,48 @@
+<form (submit)="searchClient(pesel)">
+    <label>Podaj PESEL</label>
+    <input type="text" name="pesel" required [(ngModel)]="pesel" />
+    <button>Szukaj</button>
+  </form>
+  <br/>
+<button (click)="getAllClients()">Pokaż wszystko</button>
+<button routerLink="form">Dodaj</button>
+  <br/><br/>
+  <table border="1">
+  <th>
+      Id
+  </th>
+  <th>
+      Imię
+  </th>
+  <th>
+      Nazwisko
+  </th>
+  <th>
+      PESEL
+  </th>
+  <th>
+      Adres zameldowania
+  </th>
+  <th>
+      Adres korespondencyjny
+  </th>
+  <th>
+      Telefon kontaktowy
+  </th>
+  <th>
+      e-mail
+  </th>
+  <tr *ngFor="let client of clients">
+      <!--wykonuje się pętla dla listy lists (nazwa taka jak w KlienciResource)-->
+      <td>{{ client.id }}</td>
+      <td>{{ client.imie }}</td>
+      <td>{{ client.nazwisko }}</td>
+      <td>{{ client.pesel }}</td>
+      <td>{{ client.adres_zam }}</td>
+      <td>{{ client.adres_kon }}</td>
+      <td>{{ client.telefon }}</td>
+      <td>{{ client.email }}</td>
+      <td><button [routerLink]="['form', client.id]"> Edytuj </button></td>
+      <td><button (click)="deleteClient(client.id)"> Usuń </button></td>
+  </tr>
+</table>
