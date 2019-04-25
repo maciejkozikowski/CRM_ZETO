@@ -20,7 +20,7 @@ public class Telefony {
     @Column(name = "stan_konta")
     private float stan_konta;
 
-    @Column(name = "darmowy_rozmowy")
+    @Column(name = "darmowe_rozmowy")
     private boolean darmowe_rozmowy;
 
     @Column(name = "darmowe_smsy")
@@ -29,7 +29,7 @@ public class Telefony {
     @Column(name = "darmowy_internet")
     private boolean darmowy_internet;
 
-    @Column(name = "IdKlienta")
+    @Column(name = "id_klienta")
     private int IdKlienta;
 
     public Telefony() {}

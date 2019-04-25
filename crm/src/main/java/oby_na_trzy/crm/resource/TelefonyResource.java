@@ -18,7 +18,7 @@ public class TelefonyResource {
     @GetMapping(value ="/all")
     public List<Telefony> getAll() {return telefonyRepository.findAll();}
 
-    @GetMapping(value = "searchbyid/{id}")
+    @GetMapping(value = "/searchbyid/{id}")
     public Optional<Telefony> doSearchById (@PathVariable("id") int id){
         return telefonyRepository.findById(id);
     }

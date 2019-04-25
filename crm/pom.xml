@@ -11,7 +11,7 @@
 	<groupId>oby_na_trzy</groupId>
 	<artifactId>crm</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<packaging>jar</packaging>
+	<packaging>war</packaging>
 	<name>crm</name>
 	<description>System CRM</description>
 
@@ -58,12 +58,12 @@
 			<scope>test</scope>
 		</dependency>
 
-		<dependency>
-			<groupId>org.springframework</groupId>
-			<artifactId>gs-rest-service-cors</artifactId>
+		<!--<dependency>-->
+			<!--<groupId>org.springframework</groupId>-->
+			<!--<artifactId>gs-rest-service-cors</artifactId>-->
 
-			<version>0.1.0</version>
-		</dependency>
+			<!--<version>0.1.0</version>-->
+		<!--</dependency>-->
 
 		<!--<dependency>-->
 			<!--<groupId>org.springframework.security</groupId>-->
@@ -92,6 +92,11 @@
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
 			</plugin>
+				<plugin>
+					<groupId>org.apache.maven.plugins</groupId>
+					<artifactId>maven-surefire-plugin</artifactId>
+					<version>2.19.1</version>
+				</plugin>
 		</plugins>
 	</build>
 
