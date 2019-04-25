@@ -30,7 +30,7 @@ public class Telefony {
     private boolean darmowy_internet;
 
     @Column(name = "id_klienta")
-    private int IdKlienta;
+    private int id_klienta;
 
     public Telefony() {}
 
@@ -61,4 +61,8 @@ public class Telefony {
     public boolean getDarmowy_internet(){return darmowy_internet;}
 
     public void setDarmowy_internet(boolean darmowy_internet){this.darmowy_internet = darmowy_internet;}
+
+    public int getId_klienta() { return id_klienta; }
+
+    public void setId_klienta(int id_klienta) { this.id_klienta = id_klienta; }
 }

@@ -38,11 +38,11 @@
     <td>{{ phone.numer }}</td>
     <td>{{ phone.postpaid }}</td>
     <td>{{ phone.stan_konta }}</td>
-    <td>{{ phone.darmowy_rozmowy }}</td>
+    <td>{{ phone.darmowe_rozmowy }}</td>
     <td>{{ phone.darmowe_smsy }}</td>
     <td>{{ phone.darmowy_internet }}</td>
-    <td>{{ phone.idklienta }}</td>
-    <td><button [routerLink]="['form', phone.numer]"> Edytuj </button></td>
-    <td><button (click)="deletePhone(phone.numer)"> Usuń </button></td>
+    <td>{{ phone.id_klienta }}</td>
+    <td><button [routerLink]="['form', phone.id]"> Edytuj </button></td>
+    <td><button (click)="deletePhones(phone.id)"> Usuń </button></td>
 </tr>
 </table>
