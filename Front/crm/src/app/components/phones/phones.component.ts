@@ -40,7 +40,7 @@ export class PhonesComponent implements OnInit, OnDestroy {
   addPhones() { }
 
   deletePhones(id: number) {
-    if (confirm(`Czy chcesz usunąć numer o id=${id}?`)) {
+    if (confirm(`Czy chcesz usunąć numer?`)) {
       this.subscriptions.push(
         this.phonesService.deletePhone(id).subscribe(
           data => {
