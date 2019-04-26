@@ -1,0 +1,16 @@
+aby odpaliæ to na orfi mo¿na wejœæ w mój link:
+http://orfi.uwm.edu.pl/~s141191/crmfront/
+
+mo¿na te¿ wrzuciæ na swoje konto do folderu public_html lub jego podfolderu
+
+po zmianie w kodzie angulara - patrz plik serwer-backend - skompilowaæ:
+
+ng build --base-href='nasza œcie¿ka'
+
+np. ng build --base-href='/~s141191/crmfront/'
+
+w katalogu CRM_ZETO znajduje siê plik .htaccess - nale¿y tutaj podmieniæ powy¿sz¹ przyk³adow¹ œcie¿kê na swoj¹:
+w liniach 3 i 7
+
+pliki które pojawi¹ siê w folderze dist/crm i plik .htaccess wgraæ
+w³aœnie do tej œcie¿ki i tam odpaliæ w przegl¹darce uprzednio odpalaj¹c backend

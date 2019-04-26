@@ -11,6 +11,7 @@ import java.util.Optional;
 @RestController //nie wiem po co, ale działa
 @RequestMapping(value = "/klienci") // znowu, klasa odpala się po wpisaniu takiego adresu
 @CrossOrigin(origins = "http://localhost:4200") //pozwalamy apce w angularze komunikować się z backendem
+//@CrossOrigin(origins = "http://orfi.uwm.edu.pl")
 public class KlienciResource{
 
     @Autowired //też nie wiem, ale działa
