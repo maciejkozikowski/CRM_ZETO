@@ -17,7 +17,6 @@ export class PhonesComponent implements OnInit, OnDestroy {
   phones: Telefony[] = [];
   phone: Telefony;
   idklienta: number;
-  id: number;
 
   subscriptions: Subscription[] = [];
 
