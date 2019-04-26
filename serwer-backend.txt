@@ -1,8 +1,9 @@
 odpaliæ w g³ównym katalogu repozytorium (CRM_ZETO) cmd i wkleiæ
 ssh -i "crm.pem" ubuntu@ec2-18-222-131-19.us-east-2.compute.amazonaws.com
 
-¿eby odpaliæ springa
-java -jar crm-0.0.1-SNAPSHOT.jar
+¿eby odpaliæ springa (nohup na pocz¹tku uruchomi apke w tle i mo¿na zamkn¹æ konsolê)
+przed odpaleniem sprawdziæ czy ju¿ nie dzia³a!
+nohup java -jar crm-0.0.1-SNAPSHOT.jar
 
 w przegl¹darce lokalnie lub w kodzie angulara (plik CRM_ZETO\Front\crm\src\app\configs\globalVariables)
 
