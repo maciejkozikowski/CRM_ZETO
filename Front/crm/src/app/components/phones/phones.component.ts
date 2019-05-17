@@ -24,9 +24,10 @@ export class PhonesComponent implements OnInit, OnDestroy {
               private router: Router) {}
 
   ngOnInit() {
-    this.getAllPhones(); }
+    this.getAllPhones(); 
+  }
 
-    getAllPhones() {
+  getAllPhones() {
     this.subscriptions.push(this.phonesService.getAllPhones().subscribe(
       (data: Telefony[]) => {
         this.phones = data;

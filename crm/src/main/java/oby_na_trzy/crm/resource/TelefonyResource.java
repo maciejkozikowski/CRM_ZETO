@@ -9,7 +9,7 @@ import java.util.Optional;
 
 @RestController
 @RequestMapping(value = "/telefon")
-@CrossOrigin(origins = "http://localhost:4200")
+//@CrossOrigin(origins = "http://localhost:4200")
 //@CrossOrigin(origins = "http://orfi.uwm.edu.pl")
 public class TelefonyResource {
 
