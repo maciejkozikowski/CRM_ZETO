@@ -5,6 +5,7 @@ import { Subscription } from 'rxjs';
 import { Telefony } from '../../models/Telefony';
 import { PhonesService } from '../../services/phones.service';
 import { Router } from '@angular/router';
+import { AuthService } from '../../auth/auth.service';
 
 @Component({
   selector: 'app-phones',
@@ -17,14 +18,17 @@ export class PhonesComponent implements OnInit, OnDestroy {
   phones: Telefony[] = [];
   phone: Telefony;
   idklienta: number;
+  info: any;
 
   subscriptions: Subscription[] = [];
 
   constructor(private phonesService: PhonesService,
-              private router: Router) {}
+              private router: Router,
+              private authService: AuthService) {}
 
   ngOnInit() {
     this.getAllPhones(); 
+    this.info = this.authService.checkIfLoggedIn();
   }
 
   getAllPhones() {

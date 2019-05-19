@@ -5,6 +5,7 @@ import { Subscription } from 'rxjs';
 import { Klient } from '../../models/Klient';
 import { ClientService } from '../../services/client.service';
 import { Router } from '@angular/router';
+import { AuthService } from '../../auth/auth.service';
 
 @Component({
   selector: 'app-clients-list',
@@ -17,13 +18,16 @@ export class ClientsListComponent implements OnInit, OnDestroy {
   clients: Klient[] = [];
   client: Klient;
   pesel: string;
+  info: any;
 
   subscriptions: Subscription[] = [];
 
   constructor(private clientService: ClientService,
-              private router: Router) {}
+              private router: Router,
+              private authService: AuthService) {}
 
   ngOnInit() {
+    this.info = this.authService.checkIfLoggedIn();
     this.getAllClients(); }
 
   getAllClients() {
