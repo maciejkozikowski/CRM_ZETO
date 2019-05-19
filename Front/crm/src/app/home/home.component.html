@@ -1,0 +1,15 @@
+<div *ngIf="info.token; else loggedOut">
+  <h5 class="text-primary">Twoje konto</h5>
+  <p>
+    <strong>Nazwa użytkownika:</strong> {{info.username}}<br/>
+    <strong>Typ:</strong> {{info.authorities}}.
+  </p>
+  <p *ngIf="isAdmin">
+    <a href="admin">Panel administratora</a>
+  </p>
+  <button class="btn btn-secondary" (click)="logout()">Wyloguj się</button>
+</div>
+ 
+<ng-template #loggedOut>
+  <a href="login">Zaloguj się!</a>
+</ng-template>

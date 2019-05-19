@@ -13,6 +13,14 @@ import { PhonesService } from './services/phones.service';
 import { PhonesComponent } from './components/phones/phones.component';
 import { PhonesShowComponent } from './components/phones/phones-show/phones-show.component';
 import { PhonesFormComponent } from './components/phones/phones-form/phones-form.component';
+import { LoginComponent } from './login/login.component';
+import { RegisterComponent } from './register/register.component';
+import { HomeComponent } from './home/home.component';
+import { UserComponent } from './user/user.component';
+// import { PmComponent } from './pm/pm.component';
+import { AdminComponent } from './admin/admin.component';
+
+import { httpInterceptorProviders } from './auth/auth-interceptor';
 
 @NgModule({
   declarations: [
@@ -22,7 +30,13 @@ import { PhonesFormComponent } from './components/phones/phones-form/phones-form
     ClientShowComponent,
     PhonesComponent,
     PhonesShowComponent,
-    PhonesFormComponent
+    PhonesFormComponent,
+    LoginComponent,
+    RegisterComponent,
+    HomeComponent,
+    UserComponent,
+    // PmComponent,
+    AdminComponent
   ],
   imports: [
     BrowserModule,
@@ -32,7 +46,8 @@ import { PhonesFormComponent } from './components/phones/phones-form/phones-form
   ],
   providers: [
     ClientService, 
-    PhonesService
+    PhonesService,
+    httpInterceptorProviders
   ],
   bootstrap: [AppComponent]
 })

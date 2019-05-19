@@ -1,50 +1,55 @@
-<form (submit)="searchPhones(id)">
-  <label>Podaj ID klienta</label>
-  <input type="text" name="id" required [(ngModel)]="id" />
-  <button>Szukaj</button>
-</form>
-<button (click)="getAllPhones()">Pokaż wszystko</button>
-<button routerLink="form">Dodaj</button>
-<br/>
-<br/><br/>
-<table border="1">
+<div *ngIf = "info.token; else loggedOut">
+    <form (submit)="searchPhones(id)">
+    <label>Podaj ID klienta</label>
+    <input type="text" name="id" required [(ngModel)]="id" />
+    <button>Szukaj</button>
+    </form>
+    <button (click)="getAllPhones()">Pokaż wszystko</button>
+    <button routerLink="form">Dodaj</button>
+    <br/>
+    <br/><br/>
+    <table border="1">
+        <th>
+            Id
+        </th>
     <th>
-        Id
+        Numer
     </th>
-<th>
-    Numer
-</th>
-<th>
-    Postpaid
-</th>
-<th>
-    Stan Konta
-</th>
-<th>
-   Darmowe rozmowy
-</th>
-<th>
-    Darmowe smsy
-</th>
-<th>
-    Darmowy internet
-</th>
-<th>
-    Id Klienta
-</th>
+    <th>
+        Postpaid
+    </th>
+    <th>
+        Stan Konta
+    </th>
+    <th>
+    Darmowe rozmowy
+    </th>
+    <th>
+        Darmowe smsy
+    </th>
+    <th>
+        Darmowy internet
+    </th>
+    <th>
+        Id Klienta
+    </th>
 
-<tr *ngFor="let phone of phones">
-    <ng-template #thenBlock><td>Tak</td></ng-template>
-    <ng-template #elseBlock><td>Nie</td></ng-template>
-    <td>{{ phone.id }}</td>
-    <td>{{ phone.numer }}</td>
-    <div *ngIf="phone.postpaid; then thenBlock else elseBlock"></div>
-    <td>{{ phone.stan_konta }}</td>
-    <div *ngIf="phone.darmowe_rozmowy; then thenBlock else elseBlock"></div>
-    <div *ngIf="phone.darmowe_smsy; then thenBlock else elseBlock"></div>
-    <div *ngIf="phone.darmowy_internet; then thenBlock else elseBlock"></div>
-    <td>{{ phone.id_klienta }}</td>
-    <td><button [routerLink]="['form', phone.id]"> Edytuj </button></td>
-    <td><button (click)="deletePhones(phone.id)"> Usuń </button></td>
-</tr>
-</table>
+    <tr *ngFor="let phone of phones">
+        <ng-template #thenBlock><td>Tak</td></ng-template>
+        <ng-template #elseBlock><td>Nie</td></ng-template>
+        <td>{{ phone.id }}</td>
+        <td>{{ phone.numer }}</td>
+        <div *ngIf="phone.postpaid; then thenBlock else elseBlock"></div>
+        <td>{{ phone.stan_konta }}</td>
+        <div *ngIf="phone.darmowe_rozmowy; then thenBlock else elseBlock"></div>
+        <div *ngIf="phone.darmowe_smsy; then thenBlock else elseBlock"></div>
+        <div *ngIf="phone.darmowy_internet; then thenBlock else elseBlock"></div>
+        <td>{{ phone.id_klienta }}</td>
+        <td><button [routerLink]="['form', phone.id]"> Edytuj </button></td>
+        <td><button (click)="deletePhones(phone.id)"> Usuń </button></td>
+    </tr>
+    </table>
+</div>
+<ng-template #loggedOut>
+        <div><a href="login">Zaloguj się!</a></div>
+</ng-template>

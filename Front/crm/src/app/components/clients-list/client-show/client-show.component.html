@@ -1,6 +1,6 @@
-<form (submit)="searchClient()">
+<!-- <form (submit)="searchClient()">
   <label>Podaj PESEL</label>
-  <input type="text" name="pesel" required [(ngModel)]="pesel" /><br />
+  <input type="text" name="pesel" required="pesel" /><br />
   <button>Szukaj</button>
 </form>
 
@@ -32,7 +32,6 @@
     e-mail
 </th>
 <tr *ngFor="let client of clients">
-    <!--wykonuje się pętla dla listy lists (nazwa taka jak w KlienciResource)-->
     <td>{{ client.id }}</td>
     <td>{{ client.imie }}</td>
     <td>{{ client.nazwisko }}</td>
@@ -44,4 +43,4 @@
     <td><button [routerLink]="['form', client.id]"> Edytuj </button></td>
     <td><button (click)="deleteClient(client.id)"> Usuń </button></td>
 </tr>
-</table>
+</table> -->
