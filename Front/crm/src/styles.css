@@ -1,8 +1,10 @@
 /* You can add global styles to this file, and also import other style files */
 
+@import '~bootstrap/dist/css/bootstrap.min.css';
+
 body 
     {
-    background-color: lightseagreen;
+    background-color: grey;
     font-family: Verdana;
     font-size: 20px;
     color: white;
@@ -13,23 +15,25 @@ body
 #pasek 
     {
         background-color: #303030;
-        padding: 10 px 0;
+        padding: 0px;
         border-top: 1px solid black;
         border-bottom: 1px solid black;
-        height: 40px;
+        height: 50px;
         text-align: center ;
+        margin: 0px;
+
     }
 
 ol
     {
         margin: 0;
-        padding: 0;
         display: inline-block;
         font-size: 18px;
         height: 35px;
         line-height: 200%;
         list-style-type: none;
-        
+        padding: 4px;
+        min-width: 50px;
         
     }
     
@@ -38,31 +42,39 @@ ol > li
         float: left;
         width: 150px;
         height: 40px;
-        border-right: 1px dashed yellow;
-        border-left: 1px dashed yellow;
+        border-right: 1px dashed black;
+        border-left: 1px dashed black;
+        
     }
 
 li
     {
         text-align: center ;
+        float: left;
+        min-width: 50px;
+        height: 25px;
+        font-size: 18px;
+        margin: 0px;
+        opacity: 0.8;
+        
     }
 
 li:hover
     {
-        background-color: blue;
+        background-color:royalblue;
         cursor: pointer;
     }
 
   
 a:link
 {
-		color: yellow;
+		color: white;
 }
 
 
 a:visited
 {
-	color: yellow;
+	color: white;
 }
 
 a 
