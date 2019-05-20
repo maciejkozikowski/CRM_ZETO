@@ -1,7 +1,7 @@
 spring:
   datasource:
     driverClassName: com.mysql.jdbc.Driver
-    url: jdbc:mysql://den1.mysql6.gear.host:3306/zetocrm
+    url: jdbc:mysql://den1.mysql6.gear.host:3306/zetocrm?useSSL=false
     username: zetocrm
     password: Jx85Z_Wz_yBB
   jpa:
