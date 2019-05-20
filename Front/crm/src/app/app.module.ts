@@ -1,5 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { CommonModule } from '@angular/common';
 import { HttpClientModule } from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
 import { FormsModule } from '@angular/forms';
@@ -22,6 +23,11 @@ import { AdminComponent } from './admin/admin.component';
 
 import { httpInterceptorProviders } from './auth/auth-interceptor';
 
+import { BsDropdownModule } from 'ngx-bootstrap/dropdown';
+import { TooltipModule } from 'ngx-bootstrap/tooltip';
+import { ModalModule } from 'ngx-bootstrap/modal';
+
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -42,8 +48,13 @@ import { httpInterceptorProviders } from './auth/auth-interceptor';
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    FormsModule
+    FormsModule,
+    BsDropdownModule.forRoot(),
+    TooltipModule.forRoot(),
+    ModalModule.forRoot()
   ],
+  exports: [BsDropdownModule, TooltipModule, ModalModule],
+  
   providers: [
     ClientService, 
     PhonesService,
@@ -52,3 +63,4 @@ import { httpInterceptorProviders } from './auth/auth-interceptor';
   bootstrap: [AppComponent]
 })
 export class AppModule { }
+export class AppBootstrapModule {}
