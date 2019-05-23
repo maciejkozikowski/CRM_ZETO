@@ -8,7 +8,7 @@
 
     <tr *ngFor="let row of history">
       <td>{{ row.data_polaczenia }}</td>
-      <td>{{ row.rodzaj }}</td>
+      <td><div *ngIf="row.rodzaj==0; then thenBlock1 else elseBlock1"></div> </td>
       <td>{{ row.nr_docelowy }}</td>
       <td>{{ row.rozmiar }}</td>
       <td>{{ row.cena }}</td>
@@ -17,4 +17,16 @@
 </div>
 <ng-template #loggedOut>
   <div><a href="login">Zaloguj się!</a></div>
+</ng-template>
+<ng-template #thenBlock1>
+  Rozmowa
+</ng-template>
+<ng-template #thenBlock2>
+  SMS
+</ng-template>
+<ng-template #elseBlock1>
+  <div ngIf="row.rodzaj==1; then thenBlock2 else elseBlock2"></div>
+</ng-template>
+<ng-template #elseBlock2>
+  Internert
 </ng-template>
