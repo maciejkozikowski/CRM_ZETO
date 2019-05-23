@@ -16,8 +16,7 @@ import { PhonesComponent } from '../phones/phones.component'
 export class HistoryComponent implements OnInit, OnDestroy {
 
   title = 'crm';
-  histories: Historia[] = [];
-  history: Historia;
+  history: Historia[] = [];
   phoneId: number;
   info: any;
 
@@ -41,7 +40,7 @@ export class HistoryComponent implements OnInit, OnDestroy {
   getHistory(phoneId: number){
     this.subscriptions.push(this.historyService.searchByPhoneId(phoneId).subscribe(
       (data: Historia[]) => {
-        this.histories = data;
+        this.history = data;
       },
       error => {
         console.error(error);
