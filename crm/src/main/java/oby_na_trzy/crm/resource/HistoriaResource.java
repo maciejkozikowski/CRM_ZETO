@@ -26,6 +26,6 @@ public class HistoriaResource {
     public List<Historia> doSearchByIdAndDate (@PathVariable("id") int id, @PathVariable("startdata") LocalDateTime startdata, @PathVariable("koniecdata") LocalDateTime koniecdata){return historiaRepository.findAllByIdAndDateHistoria(id, startdata, koniecdata);}
 
     @GetMapping(value = "searchbyidsum/{id}")
-    public List<Historia> doSearchByIdSum (@PathVariable("id") int id){return historiaRepository.findAllByIdSumHistoria(id);}
+    public Float doSearchByIdSum (@PathVariable("id") int id){return historiaRepository.findAllByIdSumHistoria(id);}
 
 }

@@ -19,6 +19,6 @@ public interface HistoriaRepository extends JpaRepository<Historia, Integer>{
     List<Historia> findAllByIdAndDateHistoria(@Param("IdTelefonuValue") int IdTelefonu, @Param("startData") LocalDateTime startData, @Param("koniecData") LocalDateTime koniecData);
 
     @Query(value = "SELECT SUM(cena) FROM historia where id_telefonu = :IdTelefonuValue", nativeQuery = true)
-    List<Historia> findAllByIdSumHistoria(@Param("IdTelefonuValue") int IdTelefonu);
+    Float findAllByIdSumHistoria(@Param("IdTelefonuValue") int IdTelefonu);
 
 }
