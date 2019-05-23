@@ -10,7 +10,7 @@ import { Historia } from '../models/Historia';
 export class HistoryService {
 
   private server = globalConfig.serverURL;
-  private searchByPhoneIdURL = this.server + 'historia/searchbyid/{id}';
+  private searchByPhoneIdURL = this.server + 'historia/searchbyphoneid/{id}';
 
   constructor(private http: HttpClient) { }
 

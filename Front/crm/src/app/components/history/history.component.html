@@ -6,12 +6,12 @@
     <th>Rozmiar</th>
     <th>Cena</th>
 
-    <tr *ngFor="let history of histories">
-      <td>{{ history.data_polaczenia }}</td>
-      <td>{{ history.rodzaj }}</td>
-      <td>{{ history.nr_docelowy }}</td>
-      <td>{{ history.rozmiar }}</td>
-      <td>{{ history.cena }}</td>
+    <tr *ngFor="let row of history">
+      <td>{{ row.data_polaczenia }}</td>
+      <td>{{ row.rodzaj }}</td>
+      <td>{{ row.nr_docelowy }}</td>
+      <td>{{ row.rozmiar }}</td>
+      <td>{{ row.cena }}</td>
     </tr>
   </table>
 </div>

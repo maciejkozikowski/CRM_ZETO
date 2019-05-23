@@ -28,4 +28,7 @@ public class HistoriaResource {
     @GetMapping(value = "searchbyidsum/{id}")
     public List<Historia> doSearchByIdSum (@PathVariable("id") int id){return historiaRepository.findAllByIdSumHistoria(id);}
 
+    @GetMapping(value = "searchbyphoneid/{phoneid}")
+    public List<Historia> findAllByIdHistoria(@PathVariable("phoneid") int IdTelefonu){return historiaRepository.findAllByIdHistoria(IdTelefonu);}
+
 }
