@@ -10,6 +10,9 @@ public class Historia {
     @Column(name = "id")
     private Integer id;
 
+    @Column(name = "id_telefonu")
+    private Integer id_telefonu;
+
     @Column(name = "data_polaczenia")
     private LocalDateTime data_polaczenia;
 
@@ -30,6 +33,10 @@ public class Historia {
     public Integer getId() {return id;}
 
     public void setId(Integer id) {this.id = id;}
+
+    public Integer getId_telefonu() {return id_telefonu;}
+
+    public void setId_telefonu(Integer id_telefonu) {this.id_telefonu = id_telefonu;}
 
     public LocalDateTime getData_polaczenia(){return data_polaczenia;}
 
