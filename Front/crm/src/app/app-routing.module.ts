@@ -11,6 +11,7 @@ import { HomeComponent } from './home/home.component';
 import { UserComponent } from './user/user.component';
 // import { PmComponent } from './pm/pm.component';
 import { AdminComponent } from './admin/admin.component';
+import { HistoryComponent } from './components/history/history.component';
 
 
 const routes: Routes = [
@@ -23,6 +24,7 @@ const routes: Routes = [
   { path: 'phones', component: PhonesComponent },
   { path: 'phones/form', component: PhonesFormComponent },
   { path: 'phones/form/:id', component: PhonesFormComponent },
+  { path: 'history/:phoneid', component: HistoryComponent },
   { path: 'clients/show/:idklienta', component: PhonesFormComponent },
   { path: 'home', component: HomeComponent },
   { path: 'user', component: UserComponent },

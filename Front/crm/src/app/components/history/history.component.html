@@ -1,0 +1,20 @@
+<div *ngIf = "info.token; else loggedOut">
+  <table border="1">
+    <th>Data Połączenia</th>
+    <th>Rodzaj</th>
+    <th>Numer docelowy</th>
+    <th>Rozmiar</th>
+    <th>Cena</th>
+
+    <tr *ngFor="let history of histories">
+      <td>{{ history.data_polaczenia }}</td>
+      <td>{{ history.rodzaj }}</td>
+      <td>{{ history.nr_docelowy }}</td>
+      <td>{{ history.rozmiar }}</td>
+      <td>{{ history.cena }}</td>
+    </tr>
+  </table>
+</div>
+<ng-template #loggedOut>
+  <div><a href="login">Zaloguj się!</a></div>
+</ng-template>
