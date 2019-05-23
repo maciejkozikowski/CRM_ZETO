@@ -19,6 +19,7 @@ export class PhonesComponent implements OnInit, OnDestroy {
   phone: Telefony;
   idklienta: number;
   info: any;
+  public phoneId: number;
 
   subscriptions: Subscription[] = [];
 
@@ -69,6 +70,10 @@ export class PhonesComponent implements OnInit, OnDestroy {
         console.error(error);
       }
     ));
+  }
+
+  showHistory(phoneId: number){
+    this.router.navigate(['../history/' + phoneId.toString()])
   }
 
   ngOnDestroy() {

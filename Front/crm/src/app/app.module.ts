@@ -26,6 +26,7 @@ import { httpInterceptorProviders } from './auth/auth-interceptor';
 import { BsDropdownModule } from 'ngx-bootstrap/dropdown';
 import { TooltipModule } from 'ngx-bootstrap/tooltip';
 import { ModalModule } from 'ngx-bootstrap/modal';
+import { HistoryComponent } from './components/history/history.component';
 
 
 @NgModule({
@@ -42,7 +43,8 @@ import { ModalModule } from 'ngx-bootstrap/modal';
     HomeComponent,
     UserComponent,
     // PmComponent,
-    AdminComponent
+    AdminComponent,
+    HistoryComponent
   ],
   imports: [
     BrowserModule,

@@ -45,6 +45,7 @@
         <div *ngIf="phone.darmowe_smsy; then thenBlock else elseBlock"></div>
         <div *ngIf="phone.darmowy_internet; then thenBlock else elseBlock"></div>
         <td>{{ phone.id_klienta }}</td>
+        <td><button (click)="showHistory(phone.id)"> Historia </button></td>
         <td><button [routerLink]="['form', phone.id]"> Edytuj </button></td>
         <td><button (click)="deletePhones(phone.id)"> Usuń </button></td>
     </tr>
