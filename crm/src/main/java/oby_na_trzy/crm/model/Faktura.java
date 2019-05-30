@@ -2,32 +2,25 @@ package oby_na_trzy.crm.model;
 
 
 import javax.persistence.*;
+import java.util.ArrayList;
+import java.util.List;
 
 public class Faktura {
-    @Id
-    @Column(name = "id_klienta")
-    private Integer id;
 
-    @Column(name = "imie")
     private String imie;
 
-    @Column(name = "nazwisko")
     private String nazwisko;
 
-    @Column(name = "adres_zam")
     private String adres_zam;
 
-    @Column(name = "pesel")
     private String pesel;
 
-    @Column(name = "oplata")
     private Float oplata;
 
+    private ArrayList<String> telefony;
+
+    private ArrayList<Float> oplaty;
     public Faktura(){}
-
-    public Integer getId() { return id; }
-
-    public void setId(Integer id){this.id = id;}
 
     public String getImie(){return imie;}
 
@@ -48,4 +41,20 @@ public class Faktura {
     public Float getOplata(){return oplata;}
 
     public void setOplata(Float oplata){this.oplata = oplata;}
+
+    public ArrayList<String> getTelefony() {
+        return telefony;
+    }
+
+    public void setTelefony(ArrayList<String> telefony) {
+        this.telefony = telefony;
+    }
+
+    public ArrayList<Float> getOplaty() {
+        return oplaty;
+    }
+
+    public void setOplaty(ArrayList<Float> oplaty) {
+        this.oplaty = oplaty;
+    }
 }

@@ -16,4 +16,8 @@ public interface KlienciRepository extends JpaRepository<Klienci, Integer> { // 
     @Query(value = "SELECT * FROM klienci WHERE pesel LIKE :peselValue", nativeQuery = true)
     List<Klienci> findAllByPesel(@Param("peselValue") String pesel); //to jest nasza metoda szukająca po peselu
     // brak ciała może trochę dziwić, ale pamiętajmy, że wykonało się zapytanie SQL
+
+    @Query(value = "SELECT * FROM klienci WHERE id = :idklienta", nativeQuery = true)
+    Klienci findById(@Param("idklienta") int id);
+
 }

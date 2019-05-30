@@ -24,7 +24,7 @@ public class KlienciResource{
     }
 
     @GetMapping(value = "/searchbyid/{id}") //adres "/klienci/searchbyid/" i tu po ukośniku wartość id
-    public Optional<Klienci> doSearchById(@PathVariable("id") int id){
+    public Optional<Klienci> doSearchById(@PathVariable("id") Integer id){
         return klienciRepository.findById(id);
     }
 
@@ -43,4 +43,5 @@ public class KlienciResource{
     public void doAdd(@RequestBody Klienci klient){
         klienciRepository.save(klient);
     }
+
 }
