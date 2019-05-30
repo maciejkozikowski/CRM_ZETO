@@ -16,6 +16,7 @@ body {
   font-size: 14px;
   color: white;
   margin: 0 !important;
+  /* PADDING NOPE HERE PLS*/
   /* padding-left: 100px;
   padding-right: 100px; */
   padding-top: 40px;
@@ -101,7 +102,7 @@ table {
   margin-top: 10px;
   width: 83%;
   margin-left: auto;
-  margin-right: auto; 
+  margin-right: auto;
 
 
 
@@ -158,9 +159,42 @@ td.noBackground>button {
 
 .formContent>input {
   height: 30px;
-  ;
+  
 }
 
 .formButton {
   float: left;
+}
+
+.editForm>div>label {
+  width: 150px;
+  height: 100%;
+  border: 2px;
+  border-color: white;
+  background-color: #494746;
+  color: white;
+  text-align: center;
+  margin:0;
+  padding: 0;
+}
+
+.editForm>div>input {
+  background-color: darksalmon;
+  height: 100%;
+  margin:0;
+  padding: 0;
+  border: 2px;
+  border-color: white;
+
+}
+
+.editForm>div {
+  height: 40px;
+  margin-top:10px;
+  
+}
+.editForm{
+    width: 50%;
+    margin-right: auto;
+    margin-left: auto;
 }

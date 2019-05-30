@@ -1,4 +1,4 @@
-<form (submit)="save()">
+<form (submit)="save()" class="editForm">
   <label>Imię:</label>
   <input type="text" name="imie" required [(ngModel)]="client.imie" /><br />
   <label>Nazwisko:</label>
@@ -14,5 +14,5 @@
   <label>Adres E-Mail:</label>
   <input type="text" name="email" required [(ngModel)]="client.email" />
   <br /><br />
-  <button>Zapisz!</button>
+  <button class="bigButton">Zapisz!</button>
 </form>

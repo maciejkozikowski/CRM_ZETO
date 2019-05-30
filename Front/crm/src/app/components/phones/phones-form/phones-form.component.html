@@ -1,22 +1,51 @@
-<form (submit)="save()">
+<form (submit)="save()" class="editForm">
+  <div>
     <label>Numer</label>
-    <input type="text" name="numer" required [(ngModel)]="phone.numer" /><br />
+    <input type="text" name="numer" required [(ngModel)]="phone.numer" />
+  </div>
+  <div>
     <label>Postpaid</label>
-    <input type="radio" name="postpaid" [value]="true" ng-checked="phone.postpaid == true" required [(ngModel)]="phone.postpaid" />Tak
-    <input type="radio" name="postpaid" [value]="false" ng-checked="phone.postpaid == false" required [(ngModel)]="phone.postpaid" />Nie<br />
+    <input type="radio" name="postpaid" [value]="true" ng-checked="phone.postpaid == true" required
+      [(ngModel)]="phone.postpaid" />Tak
+    <input type="radio" name="postpaid" [value]="false" ng-checked="phone.postpaid == false" required
+      [(ngModel)]="phone.postpaid" />Nie
+  </div>
+  <div>
     <label>Stan konta</label>
-    <input type="text" name="stan_konta" required [(ngModel)]="phone.stan_konta" /><br />
+    <input type="text" name="stan_konta" required [(ngModel)]="phone.stan_konta" />
+  </div>
+  <div>
     <label>Darmowe rozmowy</label>
-    <input type="radio" name="darmowe_rozmowy" [value]="true" ng-checked="phone.darmowe_rozmowy == true" required [(ngModel)]="phone.darmowe_rozmowy" />Tak
-    <input type="radio" name="darmowe_rozmowy" [value]="false" ng-checked="phone.darmowe_rozmowy == false" required [(ngModel)]="phone.darmowe_rozmowy" />Nie<br />
+    <input type="radio" name="darmowe_rozmowy" [value]="true" ng-checked="phone.darmowe_rozmowy == true" required
+      [(ngModel)]="phone.darmowe_rozmowy" />Tak
+    <input type="radio" name="darmowe_rozmowy" [value]="false" ng-checked="phone.darmowe_rozmowy == false" required
+      [(ngModel)]="phone.darmowe_rozmowy" />Nie
+
+  </div>
+  <div>
     <label>Darmowe smsy</label>
-    <input type="radio" name="darmowe_smsy" [value]="true" ng-checked="phone.darmowe_smsy == true" required [(ngModel)]="phone.darmowe_smsy" />Tak
-    <input type="radio" name="darmowe_smsy" [value]="false" ng-checked="phone.darmowe_smsy == false" required [(ngModel)]="phone.darmowe_smsy" />Nie<br />
+    <input type="radio" name="darmowe_smsy" [value]="true" ng-checked="phone.darmowe_smsy == true" required
+      [(ngModel)]="phone.darmowe_smsy" />Tak
+    <input type="radio" name="darmowe_smsy" [value]="false" ng-checked="phone.darmowe_smsy == false" required
+      [(ngModel)]="phone.darmowe_smsy" />Nie
+
+  </div>
+  <div>
     <label>Darmowy internet</label>
-    <input type="radio" name="darmowy_internet" [value]="true" ng-checked="phone.darmowy_internet == true" required [(ngModel)]="phone.darmowy_internet" />Tak
-    <input type="radio" name="darmowy_internet" [value]="false" ng-checked="phone.darmowy_internet == false" required [(ngModel)]="phone.darmowy_internet" />Nie<br />
+    <input type="radio" name="darmowy_internet" [value]="true" ng-checked="phone.darmowy_internet == true" required
+      [(ngModel)]="phone.darmowy_internet" />Tak
+    <input type="radio" name="darmowy_internet" [value]="false" ng-checked="phone.darmowy_internet == false" required
+      [(ngModel)]="phone.darmowy_internet" />Nie
+
+  </div>
+  <div>
     <label>Id klienta</label>
-    <input type="text" name="id_klienta" required [(ngModel)]="phone.id_klienta" /><br />
-    <br /><br />
-    <button>Zapisz!</button>
-  </form>
+    <input type="text" name="id_klienta" required [(ngModel)]="phone.id_klienta" />
+
+  </div>
+
+
+
+
+  <button class="bigButton">Zapisz!</button>
+</form>
