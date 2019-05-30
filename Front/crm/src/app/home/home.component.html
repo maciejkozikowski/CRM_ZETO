@@ -1,15 +1,28 @@
 <div *ngIf="info.token; else loggedOut">
+    <div id="NU">
   <h5 class="text-primary">Twoje konto</h5>
+  
   <p>
     <strong>Nazwa użytkownika:</strong> {{info.username}}<br/>
     <strong>Typ:</strong> {{info.authorities}}.
-  </p>
+  </p> 
   <p *ngIf="isAdmin">
-    <a href="admin">Panel administratora</a>
+    <button><a href="admin" style="color: white">Panel administratora</a></button>
   </p>
-  <button class="btn btn-secondary" (click)="logout()">Wyloguj się</button>
+</div>
+  <div id="wyloguj">
+    <button class="btn btn-secondary" (click)="logout()">Wyloguj się</button>
+    </div>
 </div>
  
+
 <ng-template #loggedOut>
-  <a href="login">Zaloguj się!</a>
+    <div id="zespol"><p>Zespół Oby Na Trzy</p></div>
+    <div id="tytul"><p>Customer</p>
+                    <p>Relationship</p>
+                    <p>Management</p>
+    </div>
+  <div id="log">
+  <a href="login">Logowanie</a>
+</div>
 </ng-template>

@@ -1,6 +1,8 @@
 <div *ngIf="isLoggedIn; else loggedOut">
-  Zalogowano jako: {{roles}}.
-</div>
+  <div id="witaj">
+    Witaj {{roles}}!
+    </div>
+  </div>
  
 <ng-template #loggedOut>
   <div class="row col-sm-6" style="max-width:400px;">

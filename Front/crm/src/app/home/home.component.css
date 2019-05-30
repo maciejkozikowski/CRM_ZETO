@@ -1,0 +1,55 @@
+#log
+{
+    padding-left: 100px;
+    text-align: right;
+    margin: 80px;
+    font-size: 20px;
+}
+
+#zespol
+{
+ color: red;
+ text-align: center;
+ margin: 50px;
+ font-size: 20px;
+}
+
+#tytul
+{
+    color: black;
+    text-align: center;
+    font-size: 60px;
+    font-weight: bold;
+    line-height: 60px;
+}
+
+#NU
+{
+    font-size: 20px;
+    margin-left: 40px;
+}
+
+#wyloguj
+{
+    text-align: right;
+    margin: 50px;
+    margin-top: 200px;
+}
+
+a:link
+{
+        color: rgb(247, 35, 35);
+        font-weight: bold;
+}
+
+
+a:visited
+{
+    color: rgb(247, 35, 35);
+    font-weight: bold;
+}
+
+a 
+{     
+    text-decoration: none; 
+} 
