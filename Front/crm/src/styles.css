@@ -8,30 +8,40 @@
 
 body 
     {
-    background-color: grey;
-    background-image: url("tło.jpg");
-    /* background-repeat: no-repeat; */
+    background-image: url(tlo.jpg);
+    background-repeat: no-repeat; 
     background-size: cover;
-    font-family: 'Open Sans', sans-serif;
-
-    font-size: 14px;
+    font-family: Verdana;
+    font-size: 20px;
     color: white;
     margin: 0 !important;
+    padding-left: 100px;
+    padding-right: 100px;
+    padding-top: 40px;
     }
+
+h1
+    {
+        font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+        color: black;
+        font-weight: bold;
+    
+    } 
 
 
 #pasek 
     {
-        background-color: #dad4c8;
+        background-color: #ece5d3;
         padding: 0px;
-        border-top: 1px solid black;
-        border-bottom: 1px solid black;
-        height: 40px;
+        height: 50px;
         text-align: center ;
-        margin: 5px auto;
-        width: 95%;
-        border-radius: 30px;;
-        
+        margin: 0px;
+        margin-top: 10px;
+        margin-bottom: 20px;
+        border-top-right-radius: 30px;
+        border-top-left-radius: 30px;
+        border-bottom-right-radius: 30px;
+        border-bottom-left-radius: 30px;
 
     }
 
@@ -72,20 +82,20 @@ li
 
 li:hover
     {
-        background-color:royalblue;
+        background-color:#c7bb9a;
         cursor: pointer;
     }
 
   
 a:link
 {
-		color: white;
+		color: black;
 }
 
 
 a:visited
 {
-	color: white;
+	color: black;
 }
 
 a 
