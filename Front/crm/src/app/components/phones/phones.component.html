@@ -1,42 +1,51 @@
-<div *ngIf = "info.token; else loggedOut">
+<div *ngIf="info.token; else loggedOut">
+  <div class="formMargin">
     <form (submit)="searchPhones(id)">
-    <label>Podaj ID klienta</label>
-    <input type="text" name="id" required [(ngModel)]="id" />
-    <button>Szukaj</button>
+      <div class="formContent">
+        <label>Podaj ID klienta</label>
+        <input type="text" name="id" required [(ngModel)]="id" />
+      </div>
+      <div class="formButton">
+        <button class="bigButton">Szukaj</button>
+      </div>
     </form>
-    <button (click)="getAllPhones()">Pokaż wszystko</button>
-    <button routerLink="form">Dodaj</button>
-    <br/>
-    <br/><br/>
-    <table border="1">
-        <th>
-            Id
-        </th>
-    <th>
+    </div>
+    <button class="bigButton" (click)="getAllPhones()">Pokaż wszystko</button>
+    <button class="bigButton" routerLink="form">Dodaj</button>
+    <br>
+    <table class="tableWidth" >
+      <th>
+        Id
+      </th>
+      <th>
         Numer
-    </th>
-    <th>
+      </th>
+      <th>
         Postpaid
-    </th>
-    <th>
+      </th>
+      <th>
         Stan Konta
-    </th>
-    <th>
-    Darmowe rozmowy
-    </th>
-    <th>
+      </th>
+      <th>
+        Darmowe rozmowy
+      </th>
+      <th>
         Darmowe smsy
-    </th>
-    <th>
+      </th>
+      <th>
         Darmowy internet
-    </th>
-    <th>
+      </th>
+      <th>
         Id Klienta
-    </th>
+      </th>
 
-    <tr *ngFor="let phone of phones">
-        <ng-template #thenBlock><td>Tak</td></ng-template>
-        <ng-template #elseBlock><td>Nie</td></ng-template>
+      <tr *ngFor="let phone of phones">
+        <ng-template #thenBlock>
+          <td>Tak</td>
+        </ng-template>
+        <ng-template #elseBlock>
+          <td>Nie</td>
+        </ng-template>
         <td>{{ phone.id }}</td>
         <td>{{ phone.numer }}</td>
         <div *ngIf="phone.postpaid; then thenBlock else elseBlock"></div>
@@ -45,12 +54,12 @@
         <div *ngIf="phone.darmowe_smsy; then thenBlock else elseBlock"></div>
         <div *ngIf="phone.darmowy_internet; then thenBlock else elseBlock"></div>
         <td>{{ phone.id_klienta }}</td>
-        <td><button (click)="showHistory(phone.id)"> Historia </button></td>
-        <td><button [routerLink]="['form', phone.id]"> Edytuj </button></td>
-        <td><button (click)="deletePhones(phone.id)"> Usuń </button></td>
-    </tr>
+        <td class="noBackground"><button (click)="showHistory(phone.id)"> Historia </button></td>
+        <td class="noBackground"><button [routerLink]="['form', phone.id]"> Edytuj </button></td>
+        <td class="noBackground"><button (click)="deletePhones(phone.id)"> Usuń </button></td>
+      </tr>
     </table>
-</div>
-<ng-template #loggedOut>
-        <div><a href="login">Zaloguj się!</a></div>
-</ng-template>
+  </div>
+  <ng-template #loggedOut>
+    <div><a href="login">Zaloguj się!</a></div>
+  </ng-template>

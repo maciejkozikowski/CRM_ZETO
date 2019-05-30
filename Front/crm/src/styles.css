@@ -2,11 +2,19 @@
 
 @import '~bootstrap/dist/css/bootstrap.min.css';
 
+*, *::before, *::after {
+    box-sizing: border-box;
+  }
+
 body 
     {
     background-color: grey;
-    font-family: Verdana;
-    font-size: 20px;
+    background-image: url("tło.jpg");
+    /* background-repeat: no-repeat; */
+    background-size: cover;
+    font-family: 'Open Sans', sans-serif;
+
+    font-size: 14px;
     color: white;
     margin: 0 !important;
     }
@@ -14,13 +22,16 @@ body
 
 #pasek 
     {
-        background-color: #303030;
+        background-color: #dad4c8;
         padding: 0px;
         border-top: 1px solid black;
         border-bottom: 1px solid black;
-        height: 50px;
+        height: 40px;
         text-align: center ;
-        margin: 0px;
+        margin: 5px auto;
+        width: 95%;
+        border-radius: 30px;;
+        
 
     }
 
@@ -29,7 +40,7 @@ ol
         margin: 0;
         display: inline-block;
         font-size: 18px;
-        height: 35px;
+        height: 25px;
         line-height: 200%;
         list-style-type: none;
         padding: 4px;
@@ -41,7 +52,7 @@ ol > li
     {
         float: left;
         width: 150px;
-        height: 40px;
+        height: 30px;
         border-right: 1px dashed black;
         border-left: 1px dashed black;
         
@@ -81,3 +92,61 @@ a
 {     
     text-decoration: none; 
 } 
+table{
+    /* margin-left: 8.5%;
+    margin-right: 8.5%; */
+    margin-top: 10px;
+    width: 83%;
+    margin-left: auto;
+    margin-right: auto;
+
+    
+    
+}
+td,th{
+    
+    background-color: darksalmon;
+    border: 1px solid black;
+    padding: 5px;
+
+}
+button{
+    border: 2px;
+    border-color: white;
+    margin: 0px 20px;
+    background-color: #494746;
+    color: white;
+}
+td.noBackground{
+    background-color: none !important; 
+    background: none;
+    border: none;
+}
+td.noBackground > button{
+    width: 90%;
+    height: 40px;
+}
+.bigButton{
+    width:150px;
+    height: 30px;
+}
+/* form {
+    margin: 20px;
+} */
+.formMargin{
+    margin-left: 8.5%;
+    margin-top: 20px;
+}
+.formContent{
+    color: black;
+    font-weight: bolder;
+    float: left;
+    
+    height: 30px;
+}
+.formContent>input{
+    height: 30px;;
+}
+.formButton{
+    float: left;
+}

@@ -1,14 +1,22 @@
-<div *ngIf = "info.token; else loggedOut">
-    <form (submit)="searchClient(pesel)">
-        <label>Podaj PESEL</label>
-        <input type="text" name="pesel" required [(ngModel)]="pesel" />
-        <button>Szukaj</button>
+<div class="main" *ngIf = "info.token; else loggedOut">
+    <div class="formMargin">
+        <form (submit)="searchClient(pesel)">
+            <div class="formContent">
+                <label>Podaj PESEL</label>
+                <input type="text" name="pesel" required [(ngModel)]="pesel" />
+            </div>
+        <div class="formButton">
+            <button class="bigButton" >Szukaj</button>
+        </div>
+        
     </form>
-    <br/>
-    <button (click)="getAllClients()">Pokaż wszystko</button>
-    <button routerLink="form">Dodaj</button>
-    <br/><br/>
-    <table border="1">
+    
+    <button class="bigButton" (click)="getAllClients()">Pokaż wszystko</button>
+    <button class="bigButton" routerLink="form">Dodaj</button>
+    </div>
+    
+    
+    <table >
     <th>
         Id
     </th>
@@ -43,9 +51,9 @@
         <td>{{ client.adres_kon }}</td>
         <td>{{ client.telefon }}</td>
         <td>{{ client.email }}</td>
-        <td><button (click)="showFacture(client.id)"> Faktura </button></td>
-        <td><button [routerLink]="['form', client.id]"> Edytuj </button></td>
-        <td><button (click)="deleteClient(client.id)"> Usuń </button></td>
+        <td class="noBackground"><button (click)="showFacture(client.id)"> Faktura </button></td>
+        <td class="noBackground"><button [routerLink]="['form', client.id]"> Edytuj </button></td>
+        <td class="noBackground"><button (click)="deleteClient(client.id)"> Usuń </button></td>
     </tr>
     </table>
 
