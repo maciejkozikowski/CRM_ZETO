@@ -1,0 +1,33 @@
+<div *ngIf = "info.token; else loggedOut">
+  {{facture.imie}}
+</div>
+<div *ngFor="let row of facture">
+  {{row.imie}} <br/>
+  {{row.nazwisko}} <br/>
+  {{row.pesel}} <br/>
+  {{row.adres_zam}} <br/>
+
+  <table border="1">
+    <thead>
+      <th>Numer</th>
+      <th>Koszt</th>
+    </thead>
+    <tbody>
+      <tr *ngFor="let _row of rows">
+        <td>{{ _row[0] }}</td>
+        <td>{{ _row[1] }}</td>
+      </tr>
+      <tr>
+        <td>Do zapłaty</td>
+        <td>{{ row.oplata }}</td>
+      </tr>
+    </tbody>
+  </table>
+
+</div>
+
+
+
+<ng-template #loggedOut>
+  <div><a href="login">Zaloguj się!</a></div>
+</ng-template>

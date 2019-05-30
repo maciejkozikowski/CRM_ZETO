@@ -70,6 +70,10 @@ export class ClientsListComponent implements OnInit, OnDestroy {
     ));
   }
 
+  showFacture(clientId: number){
+    this.router.navigate(['../facture/' + clientId.toString()])
+  }
+
   ngOnDestroy() {
     this.subscriptions.forEach(x => x.unsubscribe());
   }

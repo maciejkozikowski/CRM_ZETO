@@ -27,7 +27,7 @@ public class FakturaResource {
     TelefonyRepository telefonyRepository;
 
     @GetMapping(value = "/getfacture/{id}")
-    public Faktura getFacture(@PathVariable("id") int id){
+    public List<Faktura> getFacture(@PathVariable("id") int id){
         Klienci klient = klienciRepository.findById(id);
         List<Telefony> telefony_a = telefonyRepository.findAllByIdKlienta(id);
         ArrayList<Float> koszta = new ArrayList<>();
@@ -49,7 +49,9 @@ public class FakturaResource {
         faktura.setOplaty(koszta);
         faktura.setOplata(koszt);
 
-        return faktura;
+        ArrayList<Faktura> faktury = new ArrayList<Faktura>();
+        faktury.add(faktura);
+        return faktury;
     }
 
 

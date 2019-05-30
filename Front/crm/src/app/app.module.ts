@@ -27,6 +27,7 @@ import { BsDropdownModule } from 'ngx-bootstrap/dropdown';
 import { TooltipModule } from 'ngx-bootstrap/tooltip';
 import { ModalModule } from 'ngx-bootstrap/modal';
 import { HistoryComponent } from './components/history/history.component';
+import { FactureComponent } from './components/facture/facture.component';
 
 
 @NgModule({
@@ -44,7 +45,8 @@ import { HistoryComponent } from './components/history/history.component';
     UserComponent,
     // PmComponent,
     AdminComponent,
-    HistoryComponent
+    HistoryComponent,
+    FactureComponent
   ],
   imports: [
     BrowserModule,

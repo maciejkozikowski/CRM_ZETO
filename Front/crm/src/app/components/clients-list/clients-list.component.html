@@ -43,6 +43,7 @@
         <td>{{ client.adres_kon }}</td>
         <td>{{ client.telefon }}</td>
         <td>{{ client.email }}</td>
+        <td><button (click)="showFacture(client.id)"> Faktura </button></td>
         <td><button [routerLink]="['form', client.id]"> Edytuj </button></td>
         <td><button (click)="deleteClient(client.id)"> Usuń </button></td>
     </tr>
