@@ -175,9 +175,9 @@ td.noBackground>button {
   float: left;
 }
 
-.editForm>div>label {
+/* .editForm>div>label {
   width: 150px;
-  height: 100%;
+  height: 40px;
   border: 2px;
   border-color: white;
   background-color: #494746;
@@ -195,15 +195,57 @@ td.noBackground>button {
   border: 2px;
   border-color: white;
 
-}
+} */
 
 .editForm>div {
   height: 40px;
-  margin-top:10px;
+  margin:10px;
   
 }
 .editForm{
     width: 50%;
     margin-right: auto;
     margin-left: auto;
+}
+div.bigButton{
+  border: 2px;
+  border-color: white;
+  margin: 0px 20px;
+  background-color: #494746;
+  color: white;
+  float: left;
+  text-align: center;
+  height: 40px;
+  align-items: center;
+  vertical-align: middle;
+  
+}
+.bigButton>label{
+  padding: 10px;
+}
+div.element{
+  background-color: darksalmon;
+  border: 1px solid black;
+  padding: 5px;
+  width: 250px;
+  height: 40px;
+  float: left;
+  align-items: center;
+}
+div.element > input{
+  width: 240px;
+  border: none;
+  background: none;
+  background-color: none;
+}
+.radio{
+  float: left;
+  margin-right: 10px;
+  align-items: center;
+}
+div.button{
+  margin-right:auto;
+  margin-left: auto;
+  margin-top:20px;
+  height: 40px;
 }
