@@ -4,7 +4,7 @@
       <label>Numer</label>
     </div>
     <div class="element">
-      <input type="text" name="numer" required [(ngModel)]="phone.numer" />
+      <input class="form-control" style="max-width:250px; margin-bottom:10px"  type="text" name="numer" required [(ngModel)]="phone.numer" />
     </div>
 
   </div>
@@ -14,11 +14,11 @@
     </div>
     <div class="element">
       <label class="radio">
-        <input type="radio" name="postpaid" [value]="true" ng-checked="phone.postpaid == true" required
+        <input class="radio" style="max-width:250px; margin-bottom:10px"  type="radio" name="postpaid" [value]="true" ng-checked="phone.postpaid == true" required
           [(ngModel)]="phone.postpaid" />Tak
       </label>
       <label class="radio">
-        <input type="radio" name="postpaid" [value]="false" ng-checked="phone.postpaid == false" required
+        <input class="radio" style="max-width:250px; margin-bottom:10px; margin-left:10px"  type="radio" name="postpaid" [value]="false" ng-checked="phone.postpaid == false" required
           [(ngModel)]="phone.postpaid" />Nie
       </label>
 
@@ -29,7 +29,7 @@
       <label>Stan konta</label>
     </div>
     <div class="element">
-      <input type="text" name="stan_konta" required [(ngModel)]="phone.stan_konta" />
+      <input class="form-control" style="max-width:250px; margin-bottom:10px"  type="text" name="stan_konta" required [(ngModel)]="phone.stan_konta" />
     </div>
   </div>
   <div>
@@ -39,7 +39,7 @@
     <div class="element">
       <label class="radio"><input type="radio" name="darmowe_rozmowy" [value]="true"
           ng-checked="phone.darmowe_rozmowy == true" required [(ngModel)]="phone.darmowe_rozmowy" />Tak</label>
-      <label class="radio"><input type="radio" name="darmowe_rozmowy" [value]="false"
+      <label style="margin-left:10px" class="radio"><input type="radio" name="darmowe_rozmowy" [value]="false"
           ng-checked="phone.darmowe_rozmowy == false" required [(ngModel)]="phone.darmowe_rozmowy" />Nie</label>
 
 
@@ -52,7 +52,7 @@
     <div class="element">
       <label class="radio"><input type="radio" name="darmowe_smsy" [value]="true"
           ng-checked="phone.darmowe_smsy == true" required [(ngModel)]="phone.darmowe_smsy" />Tak</label>
-      <label class="radio"><input type="radio" name="darmowe_smsy" [value]="false"
+      <label style="margin-left:10px" class="radio"><input type="radio" name="darmowe_smsy" [value]="false"
           ng-checked="phone.darmowe_smsy == false" required [(ngModel)]="phone.darmowe_smsy" />Nie</label>
 
 
@@ -65,7 +65,7 @@
     <div class="element">
       <label class="radio"><input type="radio" name="darmowy_internet" [value]="true"
           ng-checked="phone.darmowy_internet == true" required [(ngModel)]="phone.darmowy_internet" />Tak</label>
-      <label class="radio"><input type="radio" name="darmowy_internet" [value]="false"
+      <label style="margin-left:10px" class="radio"><input type="radio" name="darmowy_internet" [value]="false"
           ng-checked="phone.darmowy_internet == false" required [(ngModel)]="phone.darmowy_internet" />Nie</label>
 
 
@@ -76,12 +76,13 @@
       <label>Id klienta</label>
     </div>
     <div class="element">
-      <input type="text" name="id_klienta" required [(ngModel)]="phone.id_klienta" />
+      <input class="form-control" style="max-width:250px; margin-bottom:10px"  type="text" name="id_klienta" required [(ngModel)]="phone.id_klienta" />
     </div>
   </div>
   <div>
+    <br/>
     <div class="button">
-      <button class="bigButton">Zapisz!</button>
+      <button class="btn btn-success">Zapisz!</button>
     </div>
   </div>
 

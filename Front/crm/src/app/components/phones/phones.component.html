@@ -1,43 +1,25 @@
 <div *ngIf="info.token; else loggedOut">
-  <div class="formMargin">
-    <form (submit)="searchPhones(id)">
-      <div class="formContent">
-        <label>Podaj ID klienta</label>
-        <input type="text" name="id" required [(ngModel)]="id" />
-      </div>
-      <div class="formButton">
-        <button class="bigButton">Szukaj</button>
-      </div>
-    </form>
-    </div>
-    <button class="bigButton" (click)="getAllPhones()">Pokaż wszystko</button>
-    <button class="bigButton" routerLink="form">Dodaj</button>
-    <br>
-    <table >
-      <th>
-        Id
-      </th>
-      <th>
-        Numer
-      </th>
-      <th>
-        Postpaid
-      </th>
-      <th>
-        Stan Konta
-      </th>
-      <th>
-        Darmowe rozmowy
-      </th>
-      <th>
-        Darmowe smsy
-      </th>
-      <th>
-        Darmowy internet
-      </th>
-      <th>
-        Id Klienta
-      </th>
+  <form (submit)="searchPhones(id)">
+    <label>Podaj ID klienta</label>
+      <input class="form-control" style="max-width:250px; margin-bottom:10px" type="text" name="id" required [(ngModel)]="id" />
+      <button class="btn btn-info">Szukaj</button>
+  </form>
+    <button style="margin-top:10px;margin-right:10px;margin-bottom:10px" class="btn btn-info" (click)="getAllPhones()">Pokaż wszystko</button>
+    <button style="margin-top:10px;margin-bottom:10px" class="btn btn-info" routerLink="form">Dodaj</button>
+
+    <table class="table table-striped table-hover">
+      <tr>
+        <th>Id</th>
+        <th>Numer</th>
+        <th>Postpaid</th>
+        <th>Stan Konta</th>
+        <th>Darmowe rozmowy</th>
+        <th>Darmowe smsy</th>
+        <th>Darmowy internet</th>
+        <th>Id Klienta</th>
+        <th style="min-width: 245px">Akcje</th>
+      </tr>
+      
 
       <tr *ngFor="let phone of phones">
         <ng-template #thenBlock>
@@ -54,12 +36,12 @@
         <div *ngIf="phone.darmowe_smsy; then thenBlock else elseBlock"></div>
         <div *ngIf="phone.darmowy_internet; then thenBlock else elseBlock"></div>
         <td>{{ phone.id_klienta }}</td>
-        <td class="noBackground"><button (click)="showHistory(phone.id)"> Historia </button></td>
-        <td class="noBackground"><button [routerLink]="['form', phone.id]"> Edytuj </button></td>
-        <td class="noBackground"><button (click)="deletePhones(phone.id)"> Usuń </button></td>
+        <td><button style="margin-right:3px" (click)="showHistory(phone.id)" class="btn btn-dark"> Historia </button>
+        <button style="margin-right:3px" [routerLink]="['form', phone.id]" class="btn btn-success"> Edytuj </button>
+        <button (click)="deletePhones(phone.id)" class="btn btn-danger"> Usuń </button></td>
       </tr>
     </table>
   </div>
   <ng-template #loggedOut>
-    <div><a href="login">Zaloguj się!</a></div>
+    <div><a class="btn-dark" href="login">Zaloguj się!</a></div>
   </ng-template>

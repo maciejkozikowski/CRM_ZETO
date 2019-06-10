@@ -1,7 +1,7 @@
 <div *ngIf="info.token && isAdmin; else loggedOut">
     <div *ngIf="isSignedUp; else signupForm">
-        Rejestracja udana! <br />
-        <a href="login">Zaloguj się!</a>
+        <h3>Rejestracja udana!</h3> <br />
+        <a href="login" class="btn btn-success">Zaloguj się!</a>
       </div>
        
       <ng-template #signupForm>

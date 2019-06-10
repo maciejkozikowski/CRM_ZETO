@@ -2,15 +2,17 @@
   {{facture.imie}}
 </div>
 <div *ngFor="let row of facture">
-  {{row.imie}} <br/>
+  <h5>{{row.imie}} <br/>
   {{row.nazwisko}} <br/>
   {{row.pesel}} <br/>
-  {{row.adres_zam}} <br/>
+  {{row.adres_zam}} <br/><br/></h5>
+  
 
-  <table border="1">
+  <table class="table table-bordered" style="max-width: 500px">
     <thead>
-      <th>Numer</th>
-      <th>Koszt</th>
+      <tr><th>Numer</th>
+      <th>Koszt</th></tr>
+      
     </thead>
     <tbody>
       <tr *ngFor="let _row of rows">

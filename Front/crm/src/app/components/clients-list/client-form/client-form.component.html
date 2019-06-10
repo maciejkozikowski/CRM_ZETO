@@ -4,14 +4,14 @@
       <label>Imię:</label>
     </div>
     <div class="element">
-      <input type="text" name="imie" required [(ngModel)]="client.imie" /></div>
+      <input class="form-control" style="max-width:250px; margin-bottom:10px"  type="text" name="imie" required [(ngModel)]="client.imie" /></div>
   </div>
   <div>
     <div class="bigButton">
       <label>Nazwisko:</label>
     </div>
     <div class="element">
-      <input type="text" name="nazwisko" required [(ngModel)]="client.nazwisko" />
+      <input class="form-control" style="max-width:250px; margin-bottom:10px"  type="text" name="nazwisko" required [(ngModel)]="client.nazwisko" />
     </div>
   </div>
   <div>
@@ -19,14 +19,14 @@
       <label>PESEL:</label>
     </div>
     <div class="element">
-      <input type="text" name="pesel" required [(ngModel)]="client.pesel" /></div>
+      <input class="form-control" style="max-width:250px; margin-bottom:10px"  type="text" name="pesel" required [(ngModel)]="client.pesel" /></div>
   </div>
   <div>
     <div class="bigButton">
       <label>Adres:</label>
     </div>
     <div class="element">
-      <input type="text" name="adres_zam" required [(ngModel)]="client.adres_zam" />
+      <input class="form-control" style="max-width:250px; margin-bottom:10px"  type="text" name="adres_zam" required [(ngModel)]="client.adres_zam" />
     </div>
   </div>
   <div>
@@ -34,7 +34,7 @@
       <label>Adres kontaktowy:</label>
     </div>
     <div class="element">
-      <input type="text" name="adres_kon" required [(ngModel)]="client.adres_kon" />
+      <input class="form-control" style="max-width:250px; margin-bottom:10px"  type="text" name="adres_kon" required [(ngModel)]="client.adres_kon" />
     </div>
   </div>
   <div>
@@ -42,7 +42,7 @@
       <label>Telefon:</label>
     </div>
     <div class="element">
-      <input type="text" name="telefon" required [(ngModel)]="client.telefon" />
+      <input class="form-control" style="max-width:250px; margin-bottom:10px"  type="text" name="telefon" required [(ngModel)]="client.telefon" />
     </div>
   </div>
   <div>
@@ -50,14 +50,15 @@
       <label>Adres E-Mail:</label>
     </div>
     <div class="element">
-      <input type="text" name="email" required [(ngModel)]="client.email" />
+      <input class="form-control" style="max-width:250px; margin-bottom:10px"  type="text" name="email" required [(ngModel)]="client.email" />
     </div>
   </div>
 
 
   <div>
+    <br/>
     <div class="button">
-      <button class="bigButton">Zapisz!</button>
+      <button class="btn btn-success">Zapisz!</button>
     </div>
   </div>
 </form>

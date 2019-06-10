@@ -2,12 +2,14 @@
     <div id="NU">
   <h5 class="text-primary">Twoje konto</h5>
   
-  <p>
+ 
     <strong>Nazwa użytkownika:</strong> {{info.username}}<br/>
-    <strong>Typ:</strong> {{info.authorities}}.
-  </p> 
-  <p *ngIf="isAdmin">
-    <button><a href="admin" style="color: white">Panel administratora</a></button>
+    <strong>Typ:</strong>
+    <div *ngFor="let type of info.authorities">
+      <div *ngIf="type=='ROLE_ADMIN'; else noAdmin">Administrator</div>
+      <ng-template #noAdmin>Zwykły użytkownik</ng-template>
+    </div>
+  <p *ngIf="isAdmin"><a href="admin" class="btn btn-dark" style="margin-top:30px">Panel administratora</a>
   </p>
 </div>
   <div id="wyloguj">

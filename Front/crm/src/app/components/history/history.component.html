@@ -1,10 +1,11 @@
 <div *ngIf = "info.token; else loggedOut">
-  <table border="1">
-    <th>Data Połączenia</th>
+  <table class="table table-striped table-hover">
+    <tr><th>Data Połączenia</th>
     <th>Rodzaj</th>
     <th>Numer docelowy</th>
     <th>Rozmiar</th>
-    <th>Cena</th>
+    <th>Cena</th></tr>
+    
 
     <tr *ngFor="let row of history">
       <td>{{ row.data_polaczenia }}</td>
@@ -12,21 +13,15 @@
       <td>{{ row.nr_docelowy }}</td>
       <td>{{ row.rozmiar }}</td>
       <td>{{ row.cena }}</td>
+      <ng-template #thenBlock1>Rozmowa</ng-template>
+      <ng-template #thenBlock2>SMS</ng-template>
+      <ng-template #elseBlock1>
+        <div *ngIf="row.rodzaj==1; then thenBlock2 else elseBlock2"></div>
+      </ng-template>
+      <ng-template #elseBlock2>Internet</ng-template>
     </tr>
   </table>
 </div>
 <ng-template #loggedOut>
-  <div><a href="login">Zaloguj się!</a></div>
-</ng-template>
-<ng-template #thenBlock1>
-  Rozmowa
-</ng-template>
-<ng-template #thenBlock2>
-  SMS
-</ng-template>
-<ng-template #elseBlock1>
-  <div ngIf="row.rodzaj==1; then thenBlock2 else elseBlock2"></div>
-</ng-template>
-<ng-template #elseBlock2>
-  Internet
+  <div><a class="btn btn-dark" href="login">Zaloguj się!</a></div>
 </ng-template>
