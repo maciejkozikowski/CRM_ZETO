@@ -1,5 +1,5 @@
 <div *ngIf="isLoggedIn; else loggedOut">
-  <div onload="reloadPage()"></div>
+  <div (load)="reloadPage()"></div>
   </div>
  
 <ng-template #loggedOut>
